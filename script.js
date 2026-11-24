@@ -109,6 +109,24 @@
   window.addEventListener('resize', requestIntroUpdate, { passive: true });
   updateIntroScroll();
 
+  // Showreel sound toggle button
+  const soundBtn = document.getElementById('hero-sound-btn');
+  const soundLabel = document.getElementById('hero-sound-label');
+  const heroVideo = heroMorph?.querySelector('video');
+  if (soundBtn && heroVideo) {
+    soundBtn.addEventListener('click', () => {
+      heroVideo.muted = !heroVideo.muted;
+      if (!heroVideo.muted) {
+        heroVideo.play().catch(() => {});
+      }
+      const unmuted = !heroVideo.muted;
+      soundBtn.classList.toggle('is-unmuted', unmuted);
+      soundBtn.setAttribute('aria-pressed', String(unmuted));
+      soundBtn.setAttribute('aria-label', unmuted ? 'Выключить звук шоурила' : 'Включить звук шоурила');
+      if (soundLabel) soundLabel.textContent = unmuted ? 'Звук вкл' : 'Звук';
+    });
+  }
+
   // =========================================================================
   // 2. Left-sliding Navigation Drawer (Меню · слева)
   // =========================================================================

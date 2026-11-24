@@ -480,6 +480,46 @@ ol {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0));
 }
 
+.hero-sound-btn {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 28px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  background-color: rgba(20, 19, 18, 0.36);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #f7f2ee;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease), border-color 0.25s var(--ease), opacity 0.25s var(--ease);
+}
+
+.hero-sound-btn:hover {
+  background-color: rgba(20, 19, 18, 0.62);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.hero-sound-btn__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(247, 242, 238, 0.45);
+  transition: background-color 0.25s var(--ease);
+}
+
+.hero-sound-btn.is-unmuted .hero-sound-btn__dot {
+  background-color: #f7f2ee;
+  box-shadow: 0 0 8px rgba(247, 242, 238, 0.85);
+}
+
 .intro__house {
   position: relative;
   width: 100%;
