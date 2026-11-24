@@ -128,6 +128,7 @@
 
     // Phase 2: Editorial sky headline reveals with GPU-only opacity + y (no software blur repaint)
     if (introHeadline) {
+      gsap.set(introHeadline, { filter: 'none' });
       introTl.fromTo(
         introHeadline,
         { opacity: 0, y: 26, force3D: true },

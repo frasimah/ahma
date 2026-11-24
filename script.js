@@ -29,7 +29,7 @@
 
   const updateIntroScroll = () => {
     rafId = null;
-    if (window.__AHMA_GSAP_INTRO__) return;
+    if (window.__AHMA_GSAP_INTRO__ || typeof window.gsap !== 'undefined') return;
     if (!scrollTrack || !stickyStage || !heroMorph || !thumbSlot || prefersReducedMotion) {
       if (header) {
         header.classList.toggle('is-scrolled', window.scrollY > 220);
@@ -74,8 +74,8 @@
     if (introHeadline) {
       const textProgress = easeOutCubic(clamp((rawProgress - 0.44) / 0.28, 0, 1));
       introHeadline.style.opacity = String(textProgress);
-      introHeadline.style.filter = `blur(${((1 - textProgress) * 10).toFixed(2)}px)`;
-      introHeadline.style.transform = `translateY(${((1 - textProgress) * 24).toFixed(2)}px)`;
+      introHeadline.style.filter = 'none';
+      introHeadline.style.transform = `translate3d(0, ${((1 - textProgress) * 24).toFixed(2)}px, 0)`;
     }
 
     if (scrollHint) {
