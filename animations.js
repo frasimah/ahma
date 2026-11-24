@@ -49,11 +49,19 @@
     const getTargetMetrics = () => {
       const stickyRect = stickyStage.getBoundingClientRect();
       const slotRect = thumbSlot.getBoundingClientRect();
+      const sw = Math.max(stickyRect.width, 1);
+      const sh = Math.max(stickyRect.height, 1);
+      const sx = slotRect.width / sw;
+      const sy = slotRect.height / sh;
+      const maxS = Math.max(sx, sy);
       return {
         x: slotRect.left - stickyRect.left,
         y: slotRect.top - stickyRect.top,
-        width: slotRect.width,
-        height: slotRect.height
+        sx,
+        sy,
+        // Counter-scale inner video so net scaleX === net scaleY (zero distortion, pure GPU)
+        innerSx: (maxS / sx) * 1.08,
+        innerSy: (maxS / sy) * 1.08
       };
     };
 
@@ -62,7 +70,7 @@
         trigger: scrollTrack,
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 0.75,
+        scrub: 0.65,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           if (!header) return;
@@ -73,20 +81,22 @@
       }
     });
 
-    // Phase 1: Full-bleed hero smoothly shrinks & docks into sky inset (0 -> 0.62)
+    // Phase 1: Pure GPU-composited shrink & dock (zero width/height layout reflow)
     introTl.fromTo(
       heroMorph,
       {
         x: 0,
         y: 0,
-        width: () => stickyStage.getBoundingClientRect().width,
-        height: () => stickyStage.getBoundingClientRect().height
+        scaleX: 1,
+        scaleY: 1,
+        force3D: true
       },
       {
         x: () => getTargetMetrics().x,
         y: () => getTargetMetrics().y,
-        width: () => getTargetMetrics().width,
-        height: () => getTargetMetrics().height,
+        scaleX: () => getTargetMetrics().sx,
+        scaleY: () => getTargetMetrics().sy,
+        force3D: true,
         ease: 'power2.inOut',
         duration: 0.62
       },
@@ -94,10 +104,13 @@
     );
 
     if (heroMorphImg) {
-      introTl.to(
+      introTl.fromTo(
         heroMorphImg,
+        { scaleX: 1, scaleY: 1, force3D: true },
         {
-          scale: 1.16,
+          scaleX: () => getTargetMetrics().innerSx,
+          scaleY: () => getTargetMetrics().innerSy,
+          force3D: true,
           ease: 'power2.inOut',
           duration: 0.62
         },
@@ -113,12 +126,12 @@
       introTl.to(scrollHint, { opacity: 0, y: 12, duration: 0.14, ease: 'power1.out' }, 0);
     }
 
-    // Phase 2: Editorial sky headline reveals with blur-to-sharp right before dock finishes
+    // Phase 2: Editorial sky headline reveals with GPU-only opacity + y (no software blur repaint)
     if (introHeadline) {
       introTl.fromTo(
         introHeadline,
-        { opacity: 0, y: 28, filter: 'blur(10px)' },
-        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.28, ease: 'power2.out' },
+        { opacity: 0, y: 26, force3D: true },
+        { opacity: 1, y: 0, force3D: true, duration: 0.28, ease: 'power2.out' },
         0.44
       );
     }
@@ -126,12 +139,18 @@
     // Phase 2b: Pinned sticky hold until progress = 1.0
     introTl.to({}, { duration: 0.38 }, 0.62);
 
-    // Keep header scrolled state accurate past the intro track
+    // Pause hero video when scrolled completely out of view to free GPU/decoder for rest of page
     ScrollTrigger.create({
       trigger: scrollTrack,
       start: 'bottom 80px',
-      onEnter: () => header?.classList.add('is-scrolled', 'is-dark-ink'),
-      onLeaveBack: () => header?.classList.remove('is-scrolled')
+      onEnter: () => {
+        header?.classList.add('is-scrolled', 'is-dark-ink');
+        if (heroMorphImg && typeof heroMorphImg.pause === 'function') heroMorphImg.pause();
+      },
+      onLeaveBack: () => {
+        header?.classList.remove('is-scrolled');
+        if (heroMorphImg && typeof heroMorphImg.play === 'function') heroMorphImg.play().catch(() => {});
+      }
     });
   }
 

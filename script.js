@@ -136,7 +136,7 @@
     'bolshoe-ozero': {
       title: 'Резиденция у Большого Озера',
       categoryLabel: 'Виллы и дома',
-      image: 'assets/project-karelian.png',
+      image: 'assets/project-karelian.webp',
       location: 'Россия, Ленинградская область, Большое озеро',
       area: '1753 м²',
       scope: 'эскизный проект, архитектурные решения, конструктивные решения',
@@ -150,7 +150,7 @@
     'eco-hotel-karelia': {
       title: 'Эко-отель 4 звезды в Карелии',
       categoryLabel: 'Общественная функция',
-      image: 'assets/intro-house.png',
+      image: 'assets/intro-house.webp',
       location: 'Россия, Карелия',
       area: null,
       scope: 'эскизное проектирование, концепт',
@@ -163,7 +163,7 @@
     'iceberg-crimea': {
       title: 'Дом-айсберг в Крыму',
       categoryLabel: 'Виллы и дома',
-      image: 'assets/project-facade.png',
+      image: 'assets/project-facade.webp',
       location: 'Россия, Крым',
       area: null,
       scope: 'эскизный проект, рабочая документация',
@@ -177,7 +177,7 @@
     'nahimovskoe': {
       title: 'Клубный поселок на озере Нахимовское',
       categoryLabel: 'Виллы и дома',
-      image: 'assets/method-house.png',
+      image: 'assets/method-house.webp',
       location: 'Россия, Ленинградская область, Карельский перешеек',
       area: 'площадь квартала: 1.6 га, площадь 8 участков 13 500 м², площадь зданий 3300 м²',
       scope: 'эскизный проект',
@@ -190,7 +190,7 @@
     'indonesia-resort': {
       title: 'Курорт в Индонезии',
       categoryLabel: 'Общественная функция',
-      image: 'assets/project-pool.png',
+      image: 'assets/project-pool.webp',
       location: 'Индонезия, остров Лабуан',
       area: null,
       scope: 'эскизный проект',

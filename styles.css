@@ -415,9 +415,8 @@ ol {
   color: var(--ink);
   word-break: break-word;
   opacity: 0;
-  filter: blur(10px);
-  transform: translateY(24px);
-  will-change: opacity, transform, filter;
+  transform: translate3d(0, 24px, 0);
+  will-change: opacity, transform;
 }
 
 .intro__headline-lead {
@@ -436,7 +435,8 @@ ol {
   overflow: hidden;
   background-color: #2b2725;
   transform-origin: top left;
-  will-change: transform, width, height;
+  will-change: transform;
+  contain: layout paint;
 }
 
 .hero-morph__image {

@@ -4,8 +4,8 @@ window.AHMA_PROJECTS = [
     "title": "Резиденция у Большого Озера",
     "category": "villas",
     "categoryLabel": "Виллы и дома",
-    "cover": "assets/pages/cover-bolshoe-ozero.png",
-    "hero": "assets/pages/bolshoe-ozero-01.png",
+    "cover": "assets/pages/cover-bolshoe-ozero.webp",
+    "hero": "assets/pages/bolshoe-ozero-01.webp",
     "specs": [
       {
         "label": "Локация",
@@ -30,7 +30,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/bolshoe-ozero-02.png",
+            "src": "assets/pages/bolshoe-ozero-02.webp",
             "caption": "Галерея · общий вид",
             "noDim": false
           }
@@ -40,12 +40,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/bolshoe-ozero-03.png",
+            "src": "assets/pages/bolshoe-ozero-03.webp",
             "caption": "Два ракурса",
             "noDim": false
           },
           {
-            "src": "assets/pages/bolshoe-ozero-04.png",
+            "src": "assets/pages/bolshoe-ozero-04.webp",
             "caption": "Галерея · ракурс 3",
             "noDim": false
           }
@@ -55,7 +55,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/bolshoe-ozero-05.png",
+            "src": "assets/pages/bolshoe-ozero-05.webp",
             "caption": "Дополнительные ракурсы · Въездной двор · общий вид",
             "noDim": false
           }
@@ -65,12 +65,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/bolshoe-ozero-06.png",
+            "src": "assets/pages/bolshoe-ozero-06.webp",
             "caption": "Дополнительные ракурсы · 2",
             "noDim": false
           },
           {
-            "src": "assets/pages/bolshoe-ozero-07.png",
+            "src": "assets/pages/bolshoe-ozero-07.webp",
             "caption": "Второй этаж со стороны леса",
             "noDim": false
           }
@@ -80,7 +80,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/bolshoe-ozero-08.png",
+            "src": "assets/pages/bolshoe-ozero-08.webp",
             "caption": "Дополнительные ракурсы · Боковой вид со склона",
             "noDim": false
           }
@@ -90,12 +90,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/bolshoe-ozero-09.png",
+            "src": "assets/pages/bolshoe-ozero-09.webp",
             "caption": "Дополнительные ракурсы · 4",
             "noDim": false
           },
           {
-            "src": "assets/pages/bolshoe-ozero-10.png",
+            "src": "assets/pages/bolshoe-ozero-10.webp",
             "caption": "Спальня с видом на озеро",
             "noDim": false
           }
@@ -105,12 +105,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/bolshoe-plan-m1.png",
+            "src": "assets/pages/bolshoe-plan-m1.webp",
             "caption": "План этажа -1",
             "noDim": true
           },
           {
-            "src": "assets/pages/bolshoe-plan-1.jpg",
+            "src": "assets/pages/bolshoe-plan-1.webp",
             "caption": "План 1 этажа",
             "noDim": true
           }
@@ -120,7 +120,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/bolshoe-plan-2.png",
+            "src": "assets/pages/bolshoe-plan-2.webp",
             "caption": "План 2 этажа",
             "noDim": true
           }
@@ -133,8 +133,8 @@ window.AHMA_PROJECTS = [
     "title": "Резиденция в Красногорске",
     "category": "villas",
     "categoryLabel": "Виллы и дома",
-    "cover": "assets/pages/cover-krasnogorsk.png",
-    "hero": "assets/pages/krasnogorsk-01.png",
+    "cover": "assets/pages/cover-krasnogorsk.webp",
+    "hero": "assets/pages/krasnogorsk-01.webp",
     "specs": [
       {
         "label": "Локация",
@@ -158,7 +158,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/krasnogorsk-02.png",
+            "src": "assets/pages/krasnogorsk-02.webp",
             "caption": "Галерея · общий вид",
             "noDim": false
           }
@@ -168,12 +168,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/krasnogorsk-03.png",
+            "src": "assets/pages/krasnogorsk-03.webp",
             "caption": "Два ракурса",
             "noDim": false
           },
           {
-            "src": "assets/pages/krasnogorsk-04.png",
+            "src": "assets/pages/krasnogorsk-04.webp",
             "caption": "Галерея · ракурс 3",
             "noDim": false
           }
@@ -183,7 +183,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/krasnogorsk-05.png",
+            "src": "assets/pages/krasnogorsk-05.webp",
             "caption": "Дополнительные ракурсы · Двор у въезда",
             "noDim": false
           }
@@ -193,12 +193,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/krasnogorsk-06.png",
+            "src": "assets/pages/krasnogorsk-06.webp",
             "caption": "Дополнительные ракурсы · 2",
             "noDim": false
           },
           {
-            "src": "assets/pages/krasnogorsk-07.png",
+            "src": "assets/pages/krasnogorsk-07.webp",
             "caption": "Жилой дом со стороны двора",
             "noDim": false
           }
@@ -208,7 +208,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/krasnogorsk-08.png",
+            "src": "assets/pages/krasnogorsk-08.webp",
             "caption": "Дополнительные ракурсы · Открытый бассейн и терраса",
             "noDim": false
           }
@@ -218,12 +218,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/krasnogorsk-09.png",
+            "src": "assets/pages/krasnogorsk-09.webp",
             "caption": "Дополнительные ракурсы · 4",
             "noDim": false
           },
           {
-            "src": "assets/pages/krasnogorsk-10.png",
+            "src": "assets/pages/krasnogorsk-10.webp",
             "caption": "Интерьер · гостиная",
             "noDim": false
           }
@@ -233,7 +233,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/krasnogorsk-11.png",
+            "src": "assets/pages/krasnogorsk-11.webp",
             "caption": "Дополнительные ракурсы · Двор · вечерний вид",
             "noDim": false
           }
@@ -243,12 +243,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/krasnogorsk-12.png",
+            "src": "assets/pages/krasnogorsk-12.webp",
             "caption": "Дополнительные ракурсы · 6",
             "noDim": false
           },
           {
-            "src": "assets/pages/krasnogorsk-13.png",
+            "src": "assets/pages/krasnogorsk-13.webp",
             "caption": "Вход · вечернее освещение",
             "noDim": false
           }
@@ -258,7 +258,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/krasnogorsk-14.png",
+            "src": "assets/pages/krasnogorsk-14.webp",
             "caption": "Дополнительные ракурсы · Резиденция · вечерний ракурс",
             "noDim": false
           }
@@ -272,8 +272,8 @@ window.AHMA_PROJECTS = [
     "title": "Дом-айсберг в Крыму",
     "category": "villas",
     "categoryLabel": "Виллы и дома",
-    "cover": "assets/pages/cover-crimea.png",
-    "hero": "assets/pages/crimea-01.png",
+    "cover": "assets/pages/cover-crimea.webp",
+    "hero": "assets/pages/crimea-01.webp",
     "specs": [
       {
         "label": "Локация",
@@ -293,7 +293,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/crimea-02.png",
+            "src": "assets/pages/crimea-02.webp",
             "caption": "Галерея · общий вид",
             "noDim": false
           }
@@ -303,12 +303,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/crimea-03.png",
+            "src": "assets/pages/crimea-03.webp",
             "caption": "Два ракурса",
             "noDim": false
           },
           {
-            "src": "assets/pages/crimea-04.png",
+            "src": "assets/pages/crimea-04.webp",
             "caption": "Галерея · ракурс 3",
             "noDim": false
           }
@@ -318,7 +318,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/crimea-05.png",
+            "src": "assets/pages/crimea-05.webp",
             "caption": "Дополнительные ракурсы · Фасад со стороны бассейна",
             "noDim": false
           }
@@ -328,12 +328,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/crimea-06.png",
+            "src": "assets/pages/crimea-06.webp",
             "caption": "Дополнительные ракурсы · 2",
             "noDim": false
           },
           {
-            "src": "assets/pages/crimea-07.png",
+            "src": "assets/pages/crimea-07.webp",
             "caption": "Терраса у бассейна",
             "noDim": false
           }
@@ -343,12 +343,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/crimea-08.png",
+            "src": "assets/pages/crimea-08.webp",
             "caption": "Дополнительные ракурсы · 3",
             "noDim": false
           },
           {
-            "src": "assets/pages/crimea-09.png",
+            "src": "assets/pages/crimea-09.webp",
             "caption": "Въезд и навес",
             "noDim": false
           }
@@ -361,8 +361,8 @@ window.AHMA_PROJECTS = [
     "title": "Клубный поселок на озере Нахимовское",
     "category": "villas",
     "categoryLabel": "Виллы и дома",
-    "cover": "assets/pages/cover-nahimovskoe.png",
-    "hero": "assets/pages/nahimovskoe-01.png",
+    "cover": "assets/pages/cover-nahimovskoe.webp",
+    "hero": "assets/pages/nahimovskoe-01.webp",
     "specs": [
       {
         "label": "Локация",
@@ -382,7 +382,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/nahimovskoe-02.png",
+            "src": "assets/pages/nahimovskoe-02.webp",
             "caption": "Галерея · общий вид",
             "noDim": false
           }
@@ -392,12 +392,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/nahimovskoe-03.png",
+            "src": "assets/pages/nahimovskoe-03.webp",
             "caption": "Два ракурса",
             "noDim": false
           },
           {
-            "src": "assets/pages/nahimovskoe-04.png",
+            "src": "assets/pages/nahimovskoe-04.webp",
             "caption": "Галерея · ракурс 3",
             "noDim": false
           }
@@ -407,7 +407,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/nahimovskoe-05.png",
+            "src": "assets/pages/nahimovskoe-05.webp",
             "caption": "Дополнительные ракурсы · Посёлок и береговая линия с воздуха",
             "noDim": false
           }
@@ -417,12 +417,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/nahimovskoe-06.png",
+            "src": "assets/pages/nahimovskoe-06.webp",
             "caption": "Дополнительные ракурсы · 2",
             "noDim": false
           },
           {
-            "src": "assets/pages/nahimovskoe-07.png",
+            "src": "assets/pages/nahimovskoe-07.webp",
             "caption": "Резиденция со стороны сада",
             "noDim": false
           }
@@ -435,8 +435,8 @@ window.AHMA_PROJECTS = [
     "title": "Эко-отель 4 звезды в Карелии",
     "category": "public",
     "categoryLabel": "Общественная функция",
-    "cover": "assets/pages/cover-karelia.png",
-    "hero": "assets/pages/karelia-01.png",
+    "cover": "assets/pages/cover-karelia.webp",
+    "hero": "assets/pages/karelia-01.webp",
     "specs": [
       {
         "label": "Локация",
@@ -456,7 +456,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/karelia-02.png",
+            "src": "assets/pages/karelia-02.webp",
             "caption": "Галерея · общий вид",
             "noDim": false
           }
@@ -466,12 +466,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/karelia-03.png",
+            "src": "assets/pages/karelia-03.webp",
             "caption": "Два ракурса",
             "noDim": false
           },
           {
-            "src": "assets/pages/karelia-04.png",
+            "src": "assets/pages/karelia-04.webp",
             "caption": "Галерея · ракурс 3",
             "noDim": false
           }
@@ -481,7 +481,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/karelia-05.png",
+            "src": "assets/pages/karelia-05.webp",
             "caption": "Дополнительные ракурсы · Панорамное остекление со стороны озера",
             "noDim": false
           }
@@ -491,12 +491,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/karelia-06.png",
+            "src": "assets/pages/karelia-06.webp",
             "caption": "Дополнительные ракурсы · 2",
             "noDim": false
           },
           {
-            "src": "assets/pages/karelia-07.png",
+            "src": "assets/pages/karelia-07.webp",
             "caption": "Гостевой дом на сваях",
             "noDim": false
           }
@@ -506,12 +506,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/karelia-08.png",
+            "src": "assets/pages/karelia-08.webp",
             "caption": "Дополнительные ракурсы · 3",
             "noDim": false
           },
           {
-            "src": "assets/pages/karelia-09.png",
+            "src": "assets/pages/karelia-09.webp",
             "caption": "Интерьер · спальня",
             "noDim": false
           }
@@ -524,8 +524,8 @@ window.AHMA_PROJECTS = [
     "title": "Курорт в Индонезии",
     "category": "public",
     "categoryLabel": "Общественная функция",
-    "cover": "assets/pages/cover-indonesia.png",
-    "hero": "assets/pages/indonesia-01.png",
+    "cover": "assets/pages/cover-indonesia.webp",
+    "hero": "assets/pages/indonesia-01.webp",
     "specs": [
       {
         "label": "Локация",
@@ -545,7 +545,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/indonesia-02.png",
+            "src": "assets/pages/indonesia-02.webp",
             "caption": "Галерея · общий вид",
             "noDim": false
           }
@@ -555,12 +555,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/indonesia-03.png",
+            "src": "assets/pages/indonesia-03.webp",
             "caption": "Два ракурса",
             "noDim": false
           },
           {
-            "src": "assets/pages/indonesia-04.png",
+            "src": "assets/pages/indonesia-04.webp",
             "caption": "Галерея · ракурс 3",
             "noDim": false
           }
@@ -570,7 +570,7 @@ window.AHMA_PROJECTS = [
         "type": "wide",
         "items": [
           {
-            "src": "assets/pages/indonesia-05.png",
+            "src": "assets/pages/indonesia-05.webp",
             "caption": "Дополнительные ракурсы · Отель · общий вид",
             "noDim": false
           }
@@ -580,12 +580,12 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/indonesia-06.png",
+            "src": "assets/pages/indonesia-06.webp",
             "caption": "Дополнительные ракурсы · 2",
             "noDim": false
           },
           {
-            "src": "assets/pages/indonesia-07.png",
+            "src": "assets/pages/indonesia-07.webp",
             "caption": "Отель со стороны сада",
             "noDim": false
           }
@@ -595,17 +595,17 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/indonesia-08.png",
+            "src": "assets/pages/indonesia-08.webp",
             "caption": "Дополнительные ракурсы · 3",
             "noDim": false
           },
           {
-            "src": "assets/pages/indonesia-09.png",
+            "src": "assets/pages/indonesia-09.webp",
             "caption": "Терраса у виллы",
             "noDim": false
           },
           {
-            "src": "assets/pages/indonesia-10.png",
+            "src": "assets/pages/indonesia-10.webp",
             "caption": "Интерьер виллы · гостиная",
             "noDim": false
           }
@@ -615,17 +615,17 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/indonesia-11.png",
+            "src": "assets/pages/indonesia-11.webp",
             "caption": "Дополнительные ракурсы · 4",
             "noDim": false
           },
           {
-            "src": "assets/pages/indonesia-12.png",
+            "src": "assets/pages/indonesia-12.webp",
             "caption": "Интерьер · свет и материалы",
             "noDim": false
           },
           {
-            "src": "assets/pages/indonesia-13.png",
+            "src": "assets/pages/indonesia-13.webp",
             "caption": "Интерьер · вид на спальню",
             "noDim": false
           }
@@ -635,17 +635,17 @@ window.AHMA_PROJECTS = [
         "type": "pair",
         "items": [
           {
-            "src": "assets/pages/indonesia-14.png",
+            "src": "assets/pages/indonesia-14.webp",
             "caption": "Дополнительные ракурсы · 5",
             "noDim": false
           },
           {
-            "src": "assets/pages/indonesia-15.png",
+            "src": "assets/pages/indonesia-15.webp",
             "caption": "Интерьер · спальня",
             "noDim": false
           },
           {
-            "src": "assets/pages/indonesia-16.png",
+            "src": "assets/pages/indonesia-16.webp",
             "caption": "Интерьер · ванная",
             "noDim": false
           }
