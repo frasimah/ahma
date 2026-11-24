@@ -279,6 +279,66 @@
   pointer-events: none;
 }
 
+.bureau-geo__item {
+  cursor: pointer;
+  transition: opacity 0.25s var(--ease);
+}
+
+.bureau-geo__item.is-active .bureau-geo__dot {
+  transform: scale(1.45);
+}
+
+.bureau-geo__dot {
+  transition: transform 0.25s var(--ease);
+}
+
+.bureau-geo__pin {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.bureau-geo__pin-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--ink);
+  box-shadow: 0 0 0 4px rgba(53, 49, 49, 0.16);
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.bureau-geo__pin-label {
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--ink);
+  background-color: rgba(247, 242, 238, 0.92);
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(53, 49, 49, 0.14);
+  white-space: nowrap;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.bureau-geo__pin:hover .bureau-geo__pin-dot,
+.bureau-geo__pin.is-active .bureau-geo__pin-dot {
+  transform: scale(1.35);
+  box-shadow: 0 0 0 8px rgba(53, 49, 49, 0.22);
+}
+
+.bureau-geo__pin:hover .bureau-geo__pin-label,
+.bureau-geo__pin.is-active .bureau-geo__pin-label {
+  background-color: var(--ink);
+  color: var(--bg);
+}
+
 /* ==========================================================================
    Page: Метод (586:514)
    ========================================================================== */
@@ -501,7 +561,7 @@
 .projects-feed {
   display: flex;
   flex-direction: column;
-  gap: clamp(24px, 4.167vw, 80px);
+  gap: clamp(24px, 2.8vw, 48px);
   padding-bottom: clamp(64px, 6.25vw, 120px);
 }
 
@@ -520,11 +580,15 @@
 }
 
 .projects-feed__card--wide {
-  aspect-ratio: 1800 / 900;
+  height: min(calc(100svh - 190px), 48vw);
+  min-height: 340px;
+  max-height: 780px;
 }
 
 .projects-feed__card--half {
-  aspect-ratio: 890 / 505;
+  height: min(calc(100svh - 230px), 34vw);
+  min-height: 280px;
+  max-height: 520px;
 }
 
 .projects-feed__card img {
@@ -690,6 +754,14 @@
   display: flex;
   flex-direction: column;
   gap: clamp(36px, 3.125vw, 60px);
+}
+
+.ahmadom-gallery {
+  padding-bottom: 0;
+}
+
+.ahmadom-section--tight-top {
+  padding-top: clamp(24px, 2.4vw, 44px);
 }
 
 .ahmadom-block {

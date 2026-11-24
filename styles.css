@@ -3,12 +3,28 @@
    Reference desktop width: 1920px (1800px inner container, 60px margins)
    ========================================================================== */
 
+@font-face {
+  font-family: 'Cygre';
+  src: url('assets/fonts/Cygre-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cygre';
+  src: url('assets/fonts/Cygre-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #f7f2ee;
   --ink: #353131;
   --muted: #8c8c8c;
   --border: #dad5d1;
-  --font-main: 'Cygre Medium', 'Cygre', 'Onest', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --font-main: 'Cygre', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 
   --gutter: clamp(20px, 3.125vw, 60px);
   --container-max: 1920px;
@@ -571,13 +587,14 @@ ol {
 }
 
 /* ==========================================================================
-   Section 3: Projects Gallery & Hover Title Plates (712:190)
+   Section 3: Projects Gallery & Long Hover Title Plates
+   Viewport-peek logic: current project fits inside screen + next project peeks below
    ========================================================================== */
 .projects {
-  padding-top: clamp(48px, 6.25vw, 120px);
+  padding-top: clamp(32px, 3.2vw, 60px);
   display: flex;
   flex-direction: column;
-  gap: clamp(32px, 6.25vw, 120px);
+  gap: clamp(28px, 3vw, 52px);
 }
 
 .project-trigger {
@@ -588,7 +605,7 @@ ol {
   margin: 0;
   border: none;
   background: none;
-  cursor: zoom-in;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
   text-align: left;
@@ -603,23 +620,22 @@ ol {
 
 .project-trigger:hover img,
 .project-trigger:focus-visible img {
-  transform: scale(1.02);
+  transform: scale(1.025);
 }
 
-/* Hover & Keyboard-Focus Plate (always visible on touch devices) */
+/* Long full-width hover & keyboard-focus title plate (always visible on touch devices) */
 .project-plate {
   position: absolute;
   left: clamp(14px, 1.25vw, 24px);
+  right: clamp(14px, 1.25vw, 24px);
   bottom: clamp(14px, 1.25vw, 24px);
-  max-width: calc(100% - 28px);
-  padding: 12px 16px;
-  background-color: rgba(247, 242, 238, 0.92);
+  padding: clamp(14px, 1.05vw, 20px) clamp(18px, 1.4vw, 28px);
+  background-color: rgba(247, 242, 238, 0.94);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: var(--ink);
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
@@ -627,15 +643,9 @@ ol {
 }
 
 .project-plate__title {
-  font-size: clamp(14px, 0.94vw, 17px);
+  font-size: clamp(16px, 1.05vw, 20px);
   line-height: 1.25;
   color: var(--ink);
-}
-
-.project-plate__meta {
-  font-size: clamp(12px, 0.78vw, 14px);
-  line-height: 1.3;
-  color: var(--muted);
 }
 
 .project-trigger:hover .project-plate,
@@ -655,7 +665,9 @@ ol {
 
 .project-wide {
   width: 100%;
-  aspect-ratio: 1800 / 1020;
+  height: min(calc(100svh - 175px), 50vw);
+  min-height: 340px;
+  max-height: 820px;
   overflow: hidden;
 }
 
@@ -663,25 +675,29 @@ ol {
   display: grid;
   grid-template-columns: 405fr 215fr 1180fr;
   align-items: stretch;
+  height: min(calc(100svh - 175px), 50vw);
+  min-height: 360px;
+  max-height: 820px;
 }
 
 .project-asymmetric__left {
   grid-column: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(20px, 5.2vw, 100px);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: clamp(16px, 2.4vw, 44px);
+  min-height: 0;
 }
 
 .project-asymmetric__right {
   grid-column: 3;
-  aspect-ratio: 1180 / 1020;
+  height: 100%;
   overflow: hidden;
 }
 
 .project-detail {
   width: 100%;
-  aspect-ratio: 405 / 460;
+  height: 100%;
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -698,7 +714,7 @@ ol {
 .projects__cta-wrap {
   display: flex;
   justify-content: center;
-  margin-top: clamp(-12px, -3.125vw, -60px);
+  margin-top: clamp(8px, 1.5vw, 24px);
 }
 
 /* ==========================================================================
@@ -1512,18 +1528,28 @@ ol {
 @media (max-width: 960px) {
   .project-asymmetric {
     grid-template-columns: 1fr;
+    height: auto;
+    max-height: none;
     gap: 24px;
   }
 
   .project-asymmetric__left {
     grid-column: 1;
-    flex-direction: row;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     order: 2;
   }
 
+  .project-detail {
+    aspect-ratio: 405 / 460;
+    height: auto;
+  }
+
   .project-asymmetric__right {
     grid-column: 1;
+    aspect-ratio: 4 / 3;
+    height: auto;
     order: 1;
   }
 

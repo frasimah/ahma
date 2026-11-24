@@ -241,5 +241,19 @@
     `;
   }
 
+  // 5b. Bureau globe city pins sync
+  const geoCities = document.querySelectorAll('.bureau-geo__item[data-city], .bureau-geo__pin[data-city]');
+  if (geoCities.length) {
+    const setActiveCity = (city) => {
+      geoCities.forEach((el) => el.classList.toggle('is-active', Boolean(city) && el.dataset.city === city));
+    };
+    geoCities.forEach((el) => {
+      el.addEventListener('mouseenter', () => setActiveCity(el.dataset.city));
+      el.addEventListener('mouseleave', () => setActiveCity(null));
+      el.addEventListener('focus', () => setActiveCity(el.dataset.city));
+      el.addEventListener('blur', () => setActiveCity(null));
+    });
+  }
+
   bindLightboxTriggers();
 })();

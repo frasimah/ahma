@@ -128,37 +128,29 @@
       </div>
     </section>
 
-    <!-- Section 3: Projects Gallery -->
+    <!-- Section 3: Projects Gallery (direct links to projects, hover zoom only, no plates/lightbox) -->
     <section class="projects container" id="projects" aria-label="Избранные проекты">
       <figure class="project-wide">
-        <button
-          type="button"
+        <a
+          href="project.html?id=bolshoe-ozero"
           class="project-trigger"
-          data-lightbox-src="assets/project-karelian.webp"
-          data-lightbox-caption="Резиденция у Большого Озера · Ленинградская область, 1753 м²"
-          aria-label="Открыть фото: Резиденция у Большого Озера"
+          aria-label="Перейти к проекту: Резиденция у Большого Озера"
         >
           <img decoding="async"
             src="assets/project-karelian.webp"
             alt="Двухэтажный дом на скалистом берегу озера среди сосен"
             loading="lazy"
           />
-          <span class="project-plate">
-            <span class="project-plate__title">Резиденция у Большого Озера</span>
-            <span class="project-plate__meta">Ленинградская область · 1753 м²</span>
-          </span>
-        </button>
+        </a>
       </figure>
 
       <div class="project-asymmetric">
         <div class="project-asymmetric__left">
           <figure class="project-detail project-detail--sculpt">
-            <button
-              type="button"
+            <a
+              href="project.html?id=crimea"
               class="project-trigger"
-              data-lightbox-src="assets/project-detail-top.webp"
-              data-lightbox-caption="Дом-айсберг в Крыму · Скульптурный акцент входной группы"
-              aria-label="Открыть фото: Дом-айсберг в Крыму, деталь фасада"
+              aria-label="Перейти к проекту: Дом-айсберг в Крыму"
             >
               <img decoding="async"
                 src="assets/project-detail-top.webp"
@@ -166,73 +158,51 @@
                 class="project-detail__sculpt-img"
                 loading="lazy"
               />
-              <span class="project-plate">
-                <span class="project-plate__title">Дом-айсберг в Крыму</span>
-                <span class="project-plate__meta">Деталь входной группы</span>
-              </span>
-            </button>
+            </a>
           </figure>
 
           <figure class="project-detail">
-            <button
-              type="button"
+            <a
+              href="project.html?id=nahimovskoe"
               class="project-trigger"
-              data-lightbox-src="assets/drive-home-detail.webp"
-              data-lightbox-caption="Клубный поселок на озере Нахимовское · Терраса и зона отдыха"
-              aria-label="Открыть фото: Клубный поселок на озере Нахимовское"
+              aria-label="Перейти к проекту: Клубный поселок на озере Нахимовское"
             >
               <img decoding="async"
                 src="assets/drive-home-detail.webp"
                 alt="Фрагмент деревянной отделки фасада и террасы у бассейна"
                 loading="lazy"
               />
-              <span class="project-plate">
-                <span class="project-plate__title">Озеро Нахимовское</span>
-                <span class="project-plate__meta">Терраса у воды</span>
-              </span>
-            </button>
+            </a>
           </figure>
         </div>
 
         <figure class="project-asymmetric__right">
-          <button
-            type="button"
+          <a
+            href="project.html?id=krasnogorsk"
             class="project-trigger"
-            data-lightbox-src="assets/drive-home-facade.webp"
-            data-lightbox-caption="Дом-айсберг в Крыму · Центральный фасад с панорамным остеклением"
-            aria-label="Открыть фото: Дом-айсберг в Крыму"
+            aria-label="Перейти к проекту: Резиденция в Красногорске"
           >
             <img decoding="async"
               src="assets/drive-home-facade.webp"
               alt="Симметричный фасад современного дома с двухсветным витражом"
               loading="lazy"
             />
-            <span class="project-plate">
-              <span class="project-plate__title">Дом-айсберг в Крыму</span>
-              <span class="project-plate__meta">Россия, Крым</span>
-            </span>
-          </button>
+          </a>
         </figure>
       </div>
 
       <figure class="project-wide">
-        <button
-          type="button"
+        <a
+          href="project.html?id=indonesia"
           class="project-trigger"
-          data-lightbox-src="assets/project-pool.webp"
-          data-lightbox-caption="Курорт в Индонезии · Остров Лабуан, вилла с бассейном"
-          aria-label="Открыть фото: Курорт в Индонезии"
+          aria-label="Перейти к проекту: Курорт в Индонезии"
         >
           <img decoding="async"
             src="assets/project-pool.webp"
             alt="Одноэтажный дом из светлого камня с бассейном и садом"
             loading="lazy"
           />
-          <span class="project-plate">
-            <span class="project-plate__title">Курорт в Индонезии</span>
-            <span class="project-plate__meta">Индонезия, остров Лабуан</span>
-          </span>
-        </button>
+        </a>
       </figure>
 
       <div class="projects__cta-wrap">
@@ -242,120 +212,6 @@
           </span>
           <span>Все проекты</span>
         </a>
-      </div>
-    </section>
-
-    <!-- Section 3B: Interactive 6-Project Archive (real Figma covers -> full project pages) -->
-    <section class="archive container" id="projects-archive" aria-label="Архив проектов">
-      <div class="archive__header">
-        <div>
-          <p class="section-eyebrow">Проекты</p>
-          <h2 class="display-heading archive__title">Избранное портфолио</h2>
-        </div>
-        <div class="archive__filters" role="tablist" aria-label="Фильтр проектов">
-          <button type="button" class="archive__filter is-active" role="tab" aria-selected="true" data-filter="all">Все</button>
-          <button type="button" class="archive__filter" role="tab" aria-selected="false" data-filter="villas">Виллы и дома</button>
-          <button type="button" class="archive__filter" role="tab" aria-selected="false" data-filter="public">Общественная функция</button>
-          <a href="ahma-dom.html" class="archive__filter">АХМА ДОМ</a>
-        </div>
-      </div>
-
-      <div class="archive__grid" id="archive-grid">
-        <article class="archive-card" data-category="villas">
-          <a href="project.html?id=bolshoe-ozero" class="archive-card__btn">
-            <div class="archive-card__media">
-              <img decoding="async" src="assets/pages/cover-bolshoe-ozero.webp" alt="Резиденция у Большого Озера" loading="lazy" />
-              <span class="project-plate">
-                <span class="project-plate__title">Резиденция у Большого Озера</span>
-                <span class="project-plate__meta">Россия, Ленинградская область · 1753 м²</span>
-              </span>
-            </div>
-            <div class="archive-card__info">
-              <h3 class="archive-card__name">Резиденция у Большого Озера</h3>
-              <p class="archive-card__sub">Ленинградская область · 1753 м²</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="archive-card" data-category="villas">
-          <a href="project.html?id=krasnogorsk" class="archive-card__btn">
-            <div class="archive-card__media">
-              <img decoding="async" src="assets/pages/cover-krasnogorsk.webp" alt="Резиденция в Красногорске" loading="lazy" />
-              <span class="project-plate">
-                <span class="project-plate__title">Резиденция в Красногорске</span>
-                <span class="project-plate__meta">Россия, Красногорск · 1 159 м²</span>
-              </span>
-            </div>
-            <div class="archive-card__info">
-              <h3 class="archive-card__name">Резиденция в Красногорске</h3>
-              <p class="archive-card__sub">Россия, Красногорск · 1 159 м²</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="archive-card" data-category="villas">
-          <a href="project.html?id=crimea" class="archive-card__btn">
-            <div class="archive-card__media">
-              <img decoding="async" src="assets/pages/cover-crimea.webp" alt="Дом-айсберг в Крыму" loading="lazy" />
-              <span class="project-plate">
-                <span class="project-plate__title">Дом-айсберг в Крыму</span>
-                <span class="project-plate__meta">Россия, Крым</span>
-              </span>
-            </div>
-            <div class="archive-card__info">
-              <h3 class="archive-card__name">Дом-айсберг в Крыму</h3>
-              <p class="archive-card__sub">Россия, Крым · эскизный проект, рабочая документация</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="archive-card" data-category="villas">
-          <a href="project.html?id=nahimovskoe" class="archive-card__btn">
-            <div class="archive-card__media">
-              <img decoding="async" src="assets/pages/cover-nahimovskoe.webp" alt="Клубный поселок на озере Нахимовское" loading="lazy" />
-              <span class="project-plate">
-                <span class="project-plate__title">Клубный поселок на озере Нахимовское</span>
-                <span class="project-plate__meta">Карельский перешеек · 1.6 га</span>
-              </span>
-            </div>
-            <div class="archive-card__info">
-              <h3 class="archive-card__name">Клубный поселок на озере Нахимовское</h3>
-              <p class="archive-card__sub">Ленинградская область · 8 резиденций, 3300 м²</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="archive-card" data-category="public">
-          <a href="project.html?id=karelia" class="archive-card__btn">
-            <div class="archive-card__media">
-              <img decoding="async" src="assets/pages/cover-karelia.webp" alt="Эко-отель 4 звезды в Карелии" loading="lazy" />
-              <span class="project-plate">
-                <span class="project-plate__title">Эко-отель 4 звезды в Карелии</span>
-                <span class="project-plate__meta">Россия, Карелия</span>
-              </span>
-            </div>
-            <div class="archive-card__info">
-              <h3 class="archive-card__name">Эко-отель 4 звезды в Карелии</h3>
-              <p class="archive-card__sub">Россия, Карелия · эскизное проектирование, концепт</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="archive-card" data-category="public">
-          <a href="project.html?id=indonesia" class="archive-card__btn">
-            <div class="archive-card__media">
-              <img decoding="async" src="assets/pages/cover-indonesia.webp" alt="Курорт в Индонезии" loading="lazy" />
-              <span class="project-plate">
-                <span class="project-plate__title">Курорт в Индонезии</span>
-                <span class="project-plate__meta">Индонезия, остров Лабуан</span>
-              </span>
-            </div>
-            <div class="archive-card__info">
-              <h3 class="archive-card__name">Курорт в Индонезии</h3>
-              <p class="archive-card__sub">Индонезия, остров Лабуан · отель и каскад вилл</p>
-            </div>
-          </a>
-        </article>
       </div>
     </section>
 
