@@ -1,0 +1,784 @@
+/* ==========================================================================
+   АХМА — Inner Pages Styles (Бюро, Метод, Медиа, Проекты, Проект, АХМА ДОМ)
+   Extends styles.css design system tokens
+   ========================================================================== */
+
+/* Light-background inner page header */
+.site-header--solid {
+  position: sticky;
+  top: 0;
+  background-color: rgba(247, 242, 238, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  pointer-events: auto;
+}
+
+.site-header--solid.is-scrolled {
+  border-bottom-color: var(--border);
+}
+
+.site-header--solid .site-header__logo img,
+.site-header--solid .site-header__menu-btn img {
+  filter: brightness(0) saturate(100%) invert(16%) sepia(6%) saturate(464%) hue-rotate(314deg) brightness(95%) contrast(88%);
+}
+
+/* Large editorial display (88px on 1920px) */
+.display-xl {
+  font-size: clamp(32px, 4.583vw, 88px);
+  line-height: 1.068;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.display-md {
+  font-size: clamp(24px, 2.5vw, 48px);
+  line-height: 1.125;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.display-sm {
+  font-size: clamp(22px, 1.875vw, 36px);
+  line-height: 1.1667;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.lead-copy {
+  font-size: clamp(18px, 1.25vw, 24px);
+  line-height: 1.3333;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   Page Hero (Бюро / Метод)
+   ========================================================================== */
+.editorial-hero {
+  padding-top: clamp(44px, 4.167vw, 80px);
+  padding-bottom: clamp(56px, 6.25vw, 120px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 4.375vw, 84px);
+}
+
+.editorial-hero__row {
+  display: grid;
+  grid-template-columns: minmax(140px, 405fr) minmax(0, 1335fr);
+  gap: clamp(20px, 3.125vw, 60px);
+  align-items: start;
+}
+
+.editorial-hero__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 930fr) minmax(0, 870fr);
+}
+
+.editorial-hero__intro-body {
+  grid-column: 2;
+  max-width: 780px;
+}
+
+/* ==========================================================================
+   Page: Бюро (589:247)
+   ========================================================================== */
+.bureau-quote {
+  padding-bottom: clamp(56px, 6.25vw, 120px);
+}
+
+.bureau-quote__box {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding-block: clamp(36px, 3.33vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 3.125vw, 60px);
+}
+
+.bureau-quote__row {
+  display: grid;
+  grid-template-columns: minmax(60px, 405fr) minmax(0, 1335fr);
+  gap: clamp(16px, 3.125vw, 60px);
+  align-items: start;
+}
+
+.bureau-quote__mark {
+  font-size: clamp(56px, 6.25vw, 120px);
+  line-height: 0.85;
+  color: var(--ink);
+}
+
+.bureau-quote__author-row {
+  display: grid;
+  grid-template-columns: minmax(0, 930fr) minmax(0, 870fr);
+}
+
+.bureau-quote__author {
+  grid-column: 2;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.bureau-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 5.2vw, 100px);
+}
+
+.bureau-gallery__split {
+  display: grid;
+  grid-template-columns: minmax(0, 1180fr) minmax(0, 215fr) minmax(0, 405fr);
+  align-items: center;
+}
+
+.bureau-gallery__split--reverse {
+  grid-template-columns: minmax(0, 405fr) minmax(0, 215fr) minmax(0, 1180fr);
+}
+
+.bureau-gallery__large {
+  aspect-ratio: 1180 / 760;
+  overflow: hidden;
+}
+
+.bureau-gallery__detail {
+  aspect-ratio: 405 / 570;
+  overflow: hidden;
+  position: relative;
+}
+
+.bureau-gallery__split .bureau-gallery__large { grid-column: 1; }
+.bureau-gallery__split .bureau-gallery__detail { grid-column: 3; }
+
+.bureau-gallery__split--reverse .bureau-gallery__detail { grid-column: 1; }
+.bureau-gallery__split--reverse .bureau-gallery__large { grid-column: 3; }
+
+.bureau-gallery__wide {
+  width: 100%;
+  aspect-ratio: 1800 / 1020;
+  overflow: hidden;
+}
+
+.bureau-gallery__large img,
+.bureau-gallery__detail img,
+.bureau-gallery__wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bureau-gallery__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: clamp(40px, 4.167vw, 80px);
+  padding-bottom: clamp(56px, 6.25vw, 120px);
+  padding-left: clamp(0px, 24.2vw, 465px);
+}
+
+.bureau-gallery__text-link {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--ink);
+  transition: opacity 0.25s var(--ease);
+}
+
+.bureau-gallery__text-link:hover {
+  opacity: 0.6;
+}
+
+.bureau-geo {
+  padding-top: clamp(40px, 4.167vw, 80px);
+  padding-bottom: clamp(56px, 6.25vw, 120px);
+  display: grid;
+  grid-template-columns: minmax(0, 570px) minmax(0, 760px);
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+
+.bureau-geo__info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 2.5vw, 48px);
+}
+
+.bureau-geo__head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bureau-geo__sub {
+  font-size: var(--text-body);
+  line-height: 1.55;
+  color: rgba(53, 49, 49, 0.6);
+}
+
+.bureau-geo__list {
+  border-top: 1px solid rgba(53, 49, 49, 0.14);
+}
+
+.bureau-geo__item {
+  border-bottom: 1px solid rgba(53, 49, 49, 0.14);
+  padding-block: clamp(14px, 1.04vw, 20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bureau-geo__city {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: clamp(22px, 1.667vw, 32px);
+  line-height: 1.1875;
+  letter-spacing: -0.01em;
+}
+
+.bureau-geo__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--ink);
+  flex-shrink: 0;
+}
+
+.bureau-geo__country {
+  font-size: 16px;
+  color: rgba(53, 49, 49, 0.4);
+}
+
+.bureau-geo__globe {
+  position: relative;
+  width: min(760px, 100%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  justify-self: end;
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e8e4df 70%, #c8c2bb 100%);
+}
+
+.bureau-geo__globe img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bureau-geo__globe::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.18) 100%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Page: Метод (586:514)
+   ========================================================================== */
+.method-principles {
+  padding-bottom: clamp(40px, 3.125vw, 60px);
+}
+
+.method-principle {
+  border-top: 1px solid var(--border);
+  padding-top: clamp(32px, 2.5vw, 48px);
+  padding-bottom: clamp(44px, 4.167vw, 80px);
+  min-height: clamp(180px, 16vw, 310px);
+  display: grid;
+  grid-template-columns: minmax(160px, 405fr) minmax(0, 715fr) minmax(0, 560fr);
+  gap: clamp(20px, 3.125vw, 60px);
+  align-items: start;
+}
+
+.method-principle__num {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.method-principle__desc {
+  padding-top: 6px;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: #4a4a4a;
+}
+
+/* ==========================================================================
+   Page: Медиа — объединённый архив (665:107 + handoff spec 712:190)
+   ========================================================================== */
+.page-title-block {
+  padding-top: clamp(32px, 3.125vw, 60px);
+  padding-bottom: clamp(32px, 3.125vw, 60px);
+}
+
+.page-title-block h1 {
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.media-top {
+  display: grid;
+  grid-template-columns: minmax(0, 560px) minmax(0, 560px);
+  justify-content: space-between;
+  gap: 48px;
+  padding-bottom: clamp(56px, 6.25vw, 120px);
+}
+
+.media-news-list {
+  border-top: 1px solid var(--border);
+}
+
+.media-news-item {
+  border-bottom: 1px solid var(--border);
+  padding-block: clamp(28px, 2.6vw, 50px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+  transition: opacity 0.25s var(--ease);
+}
+
+.media-news-item:not(.is-active) {
+  opacity: 0.5;
+}
+
+.media-news-item:hover {
+  opacity: 1;
+}
+
+.media-news-item__title {
+  font-size: clamp(18px, 1.145vw, 22px);
+  line-height: 1.2727;
+  color: var(--ink);
+}
+
+.media-news-preview {
+  width: 100%;
+  aspect-ratio: 560 / 732;
+  overflow: hidden;
+  background-color: #e6dfd9;
+  position: sticky;
+  top: 100px;
+}
+
+.media-news-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.35s var(--ease);
+}
+
+/* Lower Media Grid (asymmetric 2-col: 890x620 + 2x 435x300, blur on hover per 712:190) */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding-bottom: clamp(64px, 6.25vw, 120px);
+}
+
+.media-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.media-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.media-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #e6dfd9;
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.media-card--large {
+  aspect-ratio: 890 / 620;
+}
+
+.media-card--small {
+  aspect-ratio: 435 / 300;
+}
+
+.media-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.45s var(--ease), transform 0.6s var(--ease);
+}
+
+.media-card__overlay {
+  position: absolute;
+  inset: 0;
+  padding: clamp(16px, 1.8vw, 32px);
+  background: rgba(53, 49, 49, 0.38);
+  color: #f7f2ee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+
+.media-card:hover .media-card__img,
+.media-card:focus-visible .media-card__img {
+  filter: blur(8px);
+  transform: scale(1.05);
+}
+
+.media-card:hover .media-card__overlay,
+.media-card:focus-visible .media-card__overlay {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .media-card__overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(53, 49, 49, 0.15) 0%, rgba(53, 49, 49, 0.68) 100%);
+  }
+}
+
+.media-card__title {
+  font-size: clamp(16px, 1.145vw, 22px);
+  line-height: 1.25;
+}
+
+.media-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   Page: Проекты · Все (683:450)
+   ========================================================================== */
+.projects-page__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 30px;
+  padding-bottom: clamp(32px, 3.125vw, 60px);
+}
+
+.projects-page__filter {
+  background: none;
+  border: none;
+  padding: 0 0 4px;
+  cursor: pointer;
+  font-size: clamp(17px, 1.145vw, 22px);
+  line-height: 1.2;
+  color: var(--ink);
+  opacity: 0.55;
+  text-decoration: none;
+  transition: opacity 0.25s var(--ease);
+}
+
+.projects-page__filter:hover,
+.projects-page__filter.is-active {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.projects-feed {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4.167vw, 80px);
+  padding-bottom: clamp(64px, 6.25vw, 120px);
+}
+
+.projects-feed__pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.projects-feed__card {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background-color: #e6dfd9;
+}
+
+.projects-feed__card--wide {
+  aspect-ratio: 1800 / 900;
+}
+
+.projects-feed__card--half {
+  aspect-ratio: 890 / 505;
+}
+
+.projects-feed__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+
+.projects-feed__card:hover img,
+.projects-feed__card:focus-visible img {
+  transform: scale(1.025);
+}
+
+.projects-feed__card:hover .project-plate,
+.projects-feed__card:focus-visible .project-plate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-feed__card.is-hidden,
+.projects-feed__pair.is-hidden {
+  display: none;
+}
+
+/* ==========================================================================
+   Page: Детальная страница проекта (683:453–683:458) & АХМА ДОМ (262:263)
+   ========================================================================== */
+.case-hero {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 53.125vw, 1020px);
+  overflow: hidden;
+  background-color: #2b2725;
+}
+
+.case-hero__btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.case-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-hero__vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 50%);
+  pointer-events: none;
+}
+
+.case-overview {
+  width: min(870px, 100%);
+  margin-inline: auto;
+  padding-top: clamp(48px, 6.25vw, 120px);
+  padding-bottom: clamp(48px, 5.2vw, 100px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.case-specs {
+  width: 100%;
+}
+
+.case-specs__row {
+  border-top: 1px solid rgba(53, 49, 49, 0.15);
+  padding-block: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.case-concept {
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.case-concept p {
+  font-size: var(--text-body);
+  line-height: 1.444;
+}
+
+.case-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4.167vw, 80px);
+  padding-bottom: clamp(56px, 6.25vw, 120px);
+}
+
+.case-gallery__wide {
+  width: 100%;
+  aspect-ratio: 1800 / 1004;
+  overflow: hidden;
+}
+
+.case-gallery__pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.case-gallery__pair-item {
+  width: 100%;
+  aspect-ratio: 890 / 580;
+  overflow: hidden;
+}
+
+.case-gallery__plan-item img {
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 16px;
+}
+
+.case-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #1c1a19;
+}
+
+.case-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-nav {
+  border-top: 1px solid var(--border);
+  padding-block: clamp(32px, 3.125vw, 60px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: clamp(18px, 1.145vw, 22px);
+}
+
+.case-nav a {
+  transition: opacity 0.25s var(--ease);
+}
+
+.case-nav a:hover {
+  opacity: 0.6;
+}
+
+/* АХМА ДОМ editorial sections */
+.ahmadom-section {
+  width: min(870px, 100%);
+  margin-inline: auto;
+  padding-block: clamp(40px, 4.5vw, 84px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 3.125vw, 60px);
+}
+
+.ahmadom-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ahmadom-list {
+  list-style: disc;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   Inner Pages Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .bureau-geo {
+    grid-template-columns: 1fr;
+  }
+
+  .bureau-geo__globe {
+    justify-self: start;
+    max-width: 480px;
+  }
+
+  .media-top {
+    grid-template-columns: 1fr;
+  }
+
+  .media-news-preview {
+    position: relative;
+    top: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .method-principle {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .editorial-hero__row,
+  .editorial-hero__intro,
+  .bureau-quote__row,
+  .bureau-quote__author-row {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-hero__intro-body,
+  .bureau-quote__author {
+    grid-column: 1;
+  }
+
+  .bureau-gallery__split,
+  .bureau-gallery__split--reverse {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bureau-gallery__split .bureau-gallery__large,
+  .bureau-gallery__split .bureau-gallery__detail,
+  .bureau-gallery__split--reverse .bureau-gallery__detail,
+  .bureau-gallery__split--reverse .bureau-gallery__large {
+    grid-column: 1;
+  }
+
+  .bureau-gallery__links {
+    padding-left: 0;
+  }
+
+  .projects-feed__pair,
+  .case-gallery__pair,
+  .media-pair,
+  .case-specs__row {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-feed__card--wide,
+  .case-gallery__wide {
+    aspect-ratio: 4 / 3;
+  }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Бюро — АХМА</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body id="top">
+  <header class="site-header site-header--solid" id="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__logo" aria-label="АХМА — на главную">
+        <img src="assets/logo-header.svg" alt="АХМА" width="90" height="20" />
+      </a>
+      <button type="button" class="site-header__menu-btn" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav-drawer">
+        <img src="assets/menu-icon.svg" alt="" width="24" height="24" />
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+    <div class="nav-drawer__backdrop" data-close-drawer></div>
+    <nav class="nav-drawer__panel" aria-label="Основная навигация">
+      <div class="nav-drawer__top">
+        <a href="index.html" class="nav-drawer__logo" aria-label="АХМА — на главную">
+          <img src="assets/logo-footer.svg" alt="АХМА" width="144" height="32" />
+        </a>
+        <button type="button" class="nav-drawer__close" data-close-drawer aria-label="Закрыть меню">
+          <img src="assets/arrow-icon.svg" alt="" width="18" height="18" />
+        </button>
+      </div>
+      <ul class="nav-drawer__links">
+        <li><a href="bureau.html">Бюро</a></li>
+        <li><a href="method.html">Метод</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="ahma-dom.html">АХМА ДОМ</a></li>
+        <li><a href="media.html">Медиа</a></li>
+        <li><a href="index.html#contact">Контакты</a></li>
+      </ul>
+      <div class="nav-drawer__footer">
+        <div class="nav-drawer__contacts">
+          <a href="mailto:ahma@bureau.ru">ahma@bureau.ru</a>
+          <a href="tel:+79381221138">+7 938 122 11 38</a>
+        </div>
+        <div class="nav-drawer__socials">
+          <a href="https://wa.me/79381221138" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <section class="editorial-hero container">
+      <div class="editorial-hero__row">
+        <p class="section-eyebrow">Бюро</p>
+        <h1 class="display-xl">АХМА соединяет архитектурное видение с опытом реализации.</h1>
+      </div>
+      <div class="editorial-hero__intro">
+        <p class="lead-copy editorial-hero__intro-body">
+          Бюро выросло из личной архитектурной практики Алексея Солодилова. Он смотрит на архитектуру одновременно глазами архитектора и человека, который знает, как проект попадает на стройку и воплощается в реальном объеме. Поэтому в работе бюро образ здания всегда связан с его конструкцией, материалами, инженерией и способом реализации. Этот подход АХМА применяет в проектировании частных домов, коттеджных поселков, жилых комплексов и общественных объектов.
+        </p>
+      </div>
+    </section>
+
+    <section class="bureau-quote container">
+      <div class="bureau-quote__box">
+        <div class="bureau-quote__row">
+          <span class="bureau-quote__mark" aria-hidden="true">«</span>
+          <blockquote class="display-md">
+            Нас интересует архитектура, которая не воспринимается как отдельный объект. Дом становится частью ландшафта, а ландшафт — частью повседневной жизни, в которой важны свет утром, маршрут к саду, вид из окна, тишина вечером, место для семьи и возможность побыть одному.
+          </blockquote>
+        </div>
+        <div class="bureau-quote__author-row">
+          <p class="bureau-quote__author">
+            Алексей Солодилов,<br />
+            Основатель и главный архитектор бюро
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" aria-label="Ключевые проекты">
+      <div class="bureau-gallery">
+        <div class="bureau-gallery__split">
+          <figure class="bureau-gallery__large">
+            <button type="button" class="project-trigger" data-lightbox-src="assets/pages/bureau-proj-1.png" data-lightbox-caption="Резиденция АХМА — общий вид">
+              <img src="assets/pages/bureau-proj-1.png" alt="Общий вид проекта" loading="lazy" />
+            </button>
+          </figure>
+          <figure class="bureau-gallery__detail">
+            <button type="button" class="project-trigger" data-lightbox-src="assets/pages/bureau-proj-2.png" data-lightbox-caption="Архитектурная деталь фасада">
+              <img src="assets/pages/bureau-proj-2.png" alt="Деталь проекта" loading="lazy" />
+            </button>
+          </figure>
+        </div>
+
+        <figure class="bureau-gallery__wide">
+          <button type="button" class="project-trigger" data-lightbox-src="assets/pages/bureau-proj-3.png" data-lightbox-caption="Загородная резиденция в ландшафте">
+            <img src="assets/pages/bureau-proj-3.png" alt="Загородная резиденция" loading="lazy" />
+          </button>
+        </figure>
+
+        <div class="bureau-gallery__split bureau-gallery__split--reverse">
+          <figure class="bureau-gallery__detail">
+            <button type="button" class="project-trigger" data-lightbox-src="assets/pages/bureau-proj-4.png" data-lightbox-caption="Деталь входной группы">
+              <img src="assets/pages/bureau-proj-4.png" alt="Деталь проекта" loading="lazy" />
+            </button>
+          </figure>
+          <figure class="bureau-gallery__large">
+            <button type="button" class="project-trigger" data-lightbox-src="assets/pages/bureau-proj-5.png" data-lightbox-caption="Вилла с бассейном и террасой">
+              <img src="assets/pages/bureau-proj-5.png" alt="Общий вид проекта" loading="lazy" />
+            </button>
+          </figure>
+        </div>
+      </div>
+
+      <div class="bureau-gallery__links">
+        <a href="method.html" class="bureau-gallery__text-link">подробнее о методе ахма +</a>
+        <a href="projects.html" class="bureau-gallery__text-link">смотреть все проекты +</a>
+      </div>
+    </section>
+
+    <section class="bureau-geo container" aria-label="География">
+      <div class="bureau-geo__info">
+        <div class="bureau-geo__head">
+          <p class="section-eyebrow">География</p>
+          <h2 class="display-md">Работаем в России и по всему миру</h2>
+        </div>
+        <p class="bureau-geo__sub">100+ проектов в разных локациях России и за рубежом</p>
+        <ul class="bureau-geo__list">
+          <li class="bureau-geo__item">
+            <span class="bureau-geo__city"><span class="bureau-geo__dot"></span>Санкт-Петербург</span>
+            <span class="bureau-geo__country">Россия</span>
+          </li>
+          <li class="bureau-geo__item">
+            <span class="bureau-geo__city"><span class="bureau-geo__dot"></span>Москва</span>
+            <span class="bureau-geo__country">Россия</span>
+          </li>
+          <li class="bureau-geo__item">
+            <span class="bureau-geo__city"><span class="bureau-geo__dot"></span>Ростов-на-Дону</span>
+            <span class="bureau-geo__country">Россия</span>
+          </li>
+          <li class="bureau-geo__item">
+            <span class="bureau-geo__city"><span class="bureau-geo__dot"></span>Бали</span>
+            <span class="bureau-geo__country">Индонезия</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bureau-geo__globe">
+        <img src="assets/pages/bureau-globe.png" alt="География проектов АХМА на карте мира" loading="lazy" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a href="index.html" class="site-footer__logo" aria-label="АХМА — на главную">
+        <img src="assets/logo-footer.svg" alt="АХМА" width="315" height="70" />
+      </a>
+      <nav class="site-footer__nav" aria-label="Навигация в подвале">
+        <a href="bureau.html">Бюро</a>
+        <a href="method.html">Метод</a>
+        <a href="projects.html">Проекты</a>
+        <a href="media.html">Медиа</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+      <a href="index.html#contact" class="action-link site-footer__cta">
+        <span class="action-link__icon" aria-hidden="true"><img src="assets/arrow-icon.svg" alt="" width="18" height="18" /></span>
+        <span>Обсудить ваш проект</span>
+      </a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+    <div class="lightbox__top">
+      <span class="lightbox__counter" id="lightbox-counter">01 / 05</span>
+      <div class="lightbox__controls">
+        <label class="lightbox__mode-toggle"><input type="checkbox" id="lightbox-no-dim-toggle" /><span>Без затемнения</span></label>
+        <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Закрыть просмотр">×</button>
+      </div>
+    </div>
+    <div class="lightbox__stage">
+      <button type="button" class="lightbox__zone lightbox__zone--prev" id="lightbox-prev" aria-label="Предыдущее фото"><span class="lightbox__arrow" aria-hidden="true">←</span></button>
+      <figure class="lightbox__figure"><img src="" alt="" id="lightbox-img" /></figure>
+      <button type="button" class="lightbox__zone lightbox__zone--next" id="lightbox-next" aria-label="Следующее фото"><span class="lightbox__arrow" aria-hidden="true">→</span></button>
+    </div>
+    <div class="lightbox__bottom"><p class="lightbox__caption" id="lightbox-caption"></p></div>
+  </div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="site.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

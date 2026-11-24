@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Медиа — АХМА</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body id="top">
+  <header class="site-header site-header--solid" id="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__logo" aria-label="АХМА — на главную">
+        <img src="assets/logo-header.svg" alt="АХМА" width="90" height="20" />
+      </a>
+      <button type="button" class="site-header__menu-btn" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav-drawer">
+        <img src="assets/menu-icon.svg" alt="" width="24" height="24" />
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+    <div class="nav-drawer__backdrop" data-close-drawer></div>
+    <nav class="nav-drawer__panel" aria-label="Основная навигация">
+      <div class="nav-drawer__top">
+        <a href="index.html" class="nav-drawer__logo" aria-label="АХМА — на главную">
+          <img src="assets/logo-footer.svg" alt="АХМА" width="144" height="32" />
+        </a>
+        <button type="button" class="nav-drawer__close" data-close-drawer aria-label="Закрыть меню">
+          <img src="assets/arrow-icon.svg" alt="" width="18" height="18" />
+        </button>
+      </div>
+      <ul class="nav-drawer__links">
+        <li><a href="bureau.html">Бюро</a></li>
+        <li><a href="method.html">Метод</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="ahma-dom.html">АХМА ДОМ</a></li>
+        <li><a href="media.html">Медиа</a></li>
+        <li><a href="index.html#contact">Контакты</a></li>
+      </ul>
+      <div class="nav-drawer__footer">
+        <div class="nav-drawer__contacts">
+          <a href="mailto:ahma@bureau.ru">ahma@bureau.ru</a>
+          <a href="tel:+79381221138">+7 938 122 11 38</a>
+        </div>
+        <div class="nav-drawer__socials">
+          <a href="https://wa.me/79381221138" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <section class="page-title-block container">
+      <h1>Медиа</h1>
+    </section>
+
+    <!-- Upper News List + Selected News Preview -->
+    <section class="media-top container" aria-label="Новости бюро">
+      <div class="media-news-list">
+        <article class="media-news-item is-active" data-preview-src="assets/pages/media-archmoscow-photo.png">
+          <h2 class="media-news-item__title">
+            АХМА на АрхМоскве 2025: пообщались с коллегами и представили свои архитектурные концепции в секции проектов HoReCa
+          </h2>
+          <a href="#media-articles" class="action-link">
+            <span class="action-link__icon" aria-hidden="true"><img src="assets/arrow-icon.svg" alt="" width="18" height="18" /></span>
+            <span>Читать</span>
+          </a>
+        </article>
+
+        <article class="media-news-item" data-preview-src="assets/pages/media-lit-house.png">
+          <h2 class="media-news-item__title">
+            5 самых популярных вопросов для АХМА: от стоимости проекта до возможности удаленного проектирования и строительства
+          </h2>
+          <a href="#media-articles" class="action-link">
+            <span class="action-link__icon" aria-hidden="true"><img src="assets/arrow-icon.svg" alt="" width="18" height="18" /></span>
+            <span>Читать</span>
+          </a>
+        </article>
+
+        <article class="media-news-item" data-preview-src="assets/pages/media-pool-house.png">
+          <h2 class="media-news-item__title">
+            Награда Ростовского архитектурного форума 2026: разбор реализованных загородных резиденций и работы с ландшафтом
+          </h2>
+          <a href="#media-articles" class="action-link">
+            <span class="action-link__icon" aria-hidden="true"><img src="assets/arrow-icon.svg" alt="" width="18" height="18" /></span>
+            <span>Читать</span>
+          </a>
+        </article>
+      </div>
+
+      <div class="media-news-preview">
+        <img id="media-preview-img" src="assets/pages/media-archmoscow-photo.png" alt="Превью выбранной новости" />
+      </div>
+    </section>
+
+    <!-- Lower Media Grid (blur + title & "Читать" on hover per handoff spec 712:190) -->
+    <section class="media-grid container" id="media-articles" aria-label="Статьи и другие материалы">
+      <div class="media-col">
+        <button
+          type="button"
+          class="media-card media-card--large"
+          data-lightbox-src="assets/pages/media-lit-house.png"
+          data-lightbox-caption="Скрытая инженерия и архитектурная подсветка в современном доме"
+        >
+          <img class="media-card__img" src="assets/pages/media-lit-house.png" alt="Дом с подсветкой" loading="lazy" />
+          <span class="media-card__overlay">
+            <span class="media-card__title">Скрытая инженерия и архитектурная подсветка в современном доме</span>
+            <span class="media-card__cta">+ Читать</span>
+          </span>
+        </button>
+
+        <div class="media-pair">
+          <button
+            type="button"
+            class="media-card media-card--small"
+            data-lightbox-src="assets/pages/media-archmoscow-logo.svg"
+            data-lightbox-caption="Арх Москва 2025 — участие в конкурсе NEXT"
+            data-lightbox-no-dim="true"
+          >
+            <img class="media-card__img" src="assets/pages/media-archmoscow-logo.svg" alt="АрхМосква логотип" loading="lazy" />
+            <span class="media-card__overlay">
+              <span class="media-card__title">Арх Москва 2025 · финалисты NEXT</span>
+              <span class="media-card__cta">+ Читать</span>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="media-card media-card--small"
+            data-lightbox-src="assets/pages/media-forest-house.png"
+            data-lightbox-caption="Посадка дома на сложном лесном рельефе"
+          >
+            <img class="media-card__img" src="assets/pages/media-forest-house.png" alt="Дом среди деревьев" loading="lazy" />
+            <span class="media-card__overlay">
+              <span class="media-card__title">Посадка дома на сложном лесном рельефе</span>
+              <span class="media-card__cta">+ Читать</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="media-col">
+        <div class="media-pair">
+          <button
+            type="button"
+            class="media-card media-card--small"
+            data-lightbox-src="assets/pages/media-archmoscow-photo.png"
+            data-lightbox-caption="АХМА на АрхМоскве 2025: секция проектов HoReCa"
+          >
+            <img class="media-card__img" src="assets/pages/media-archmoscow-photo.png" alt="АрхМосква фотография" loading="lazy" />
+            <span class="media-card__overlay">
+              <span class="media-card__title">АХМА на АрхМоскве 2025: секция HoReCa</span>
+              <span class="media-card__cta">+ Читать</span>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="media-card media-card--small"
+            data-lightbox-src="assets/pages/media-facade.png"
+            data-lightbox-caption="Материалы, которые со временем становятся благороднее"
+          >
+            <img class="media-card__img" src="assets/pages/media-facade.png" alt="Фасад дома" loading="lazy" />
+            <span class="media-card__overlay">
+              <span class="media-card__title">Натуральный камень, термодерево и металл</span>
+              <span class="media-card__cta">+ Читать</span>
+            </span>
+          </button>
+        </div>
+
+        <button
+          type="button"
+          class="media-card media-card--large"
+          data-lightbox-src="assets/pages/media-pool-house.png"
+          data-lightbox-caption="Как проектируется одноэтажная вилла с бассейном и приватным двором"
+        >
+          <img class="media-card__img" src="assets/pages/media-pool-house.png" alt="Дом с бассейном" loading="lazy" />
+          <span class="media-card__overlay">
+            <span class="media-card__title">Как проектируется одноэтажная вилла с бассейном и приватным двором</span>
+            <span class="media-card__cta">+ Читать</span>
+          </span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a href="index.html" class="site-footer__logo" aria-label="АХМА — на главную">
+        <img src="assets/logo-footer.svg" alt="АХМА" width="315" height="70" />
+      </a>
+      <nav class="site-footer__nav" aria-label="Навигация в подвале">
+        <a href="bureau.html">Бюро</a>
+        <a href="method.html">Метод</a>
+        <a href="projects.html">Проекты</a>
+        <a href="media.html">Медиа</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+      <a href="index.html#contact" class="action-link site-footer__cta">
+        <span class="action-link__icon" aria-hidden="true"><img src="assets/arrow-icon.svg" alt="" width="18" height="18" /></span>
+        <span>Обсудить ваш проект</span>
+      </a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Просмотр материала">
+    <div class="lightbox__top">
+      <span class="lightbox__counter" id="lightbox-counter">01 / 06</span>
+      <div class="lightbox__controls">
+        <label class="lightbox__mode-toggle"><input type="checkbox" id="lightbox-no-dim-toggle" /><span>Без затемнения</span></label>
+        <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Закрыть просмотр">×</button>
+      </div>
+    </div>
+    <div class="lightbox__stage">
+      <button type="button" class="lightbox__zone lightbox__zone--prev" id="lightbox-prev" aria-label="Предыдущее фото"><span class="lightbox__arrow" aria-hidden="true">←</span></button>
+      <figure class="lightbox__figure"><img src="" alt="" id="lightbox-img" /></figure>
+      <button type="button" class="lightbox__zone lightbox__zone--next" id="lightbox-next" aria-label="Следующее фото"><span class="lightbox__arrow" aria-hidden="true">→</span></button>
+    </div>
+    <div class="lightbox__bottom"><p class="lightbox__caption" id="lightbox-caption"></p></div>
+  </div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="site.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

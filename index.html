@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>АХМА — Архитектурное бюро</title>
+  <meta name="description" content="Архитектурное бюро АХМА. Проектируем дома, где инженерия скрыта, а пространство интуитивно." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Header overlay -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a href="#top" class="site-header__logo" aria-label="АХМА — на главную">
+        <img src="assets/logo-header.svg" alt="АХМА" width="90" height="20" />
+      </a>
+      <button
+        type="button"
+        class="site-header__menu-btn"
+        id="menu-toggle"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+      >
+        <img src="assets/menu-icon.svg" alt="" width="24" height="24" />
+      </button>
+    </div>
+  </header>
+
+  <!-- Left-sliding Navigation Drawer (Меню · слева) -->
+  <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+    <div class="nav-drawer__backdrop" data-close-drawer></div>
+    <nav class="nav-drawer__panel" aria-label="Основная навигация">
+      <div class="nav-drawer__top">
+        <a href="#top" class="nav-drawer__logo" data-close-drawer aria-label="АХМА — на главную">
+          <img src="assets/logo-footer.svg" alt="АХМА" width="144" height="32" />
+        </a>
+        <button type="button" class="nav-drawer__close" data-close-drawer aria-label="Закрыть меню">
+          <img src="assets/arrow-icon.svg" alt="" width="18" height="18" />
+        </button>
+      </div>
+
+      <ul class="nav-drawer__links">
+        <li><a href="bureau.html" data-close-drawer>Бюро</a></li>
+        <li><a href="method.html" data-close-drawer>Метод</a></li>
+        <li><a href="projects.html" data-close-drawer>Проекты</a></li>
+        <li><a href="ahma-dom.html" data-close-drawer>АХМА ДОМ</a></li>
+        <li><a href="media.html" data-close-drawer>Медиа</a></li>
+        <li><a href="#contact" data-close-drawer>Контакты</a></li>
+      </ul>
+
+      <div class="nav-drawer__footer">
+        <div class="nav-drawer__contacts">
+          <a href="mailto:ahma@bureau.ru">ahma@bureau.ru</a>
+          <a href="tel:+79381221138">+7 938 122 11 38</a>
+        </div>
+        <div class="nav-drawer__socials">
+          <a href="https://wa.me/79381221138" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Section 1 & 2: Scroll-driven Hero -> Sky Intro (encore-resort.ru style) -->
+    <section class="intro-stage" id="intro-stage" aria-label="Главный экран и интро">
+      <div class="intro-scroll-track" id="intro-scroll-track">
+        <div class="intro-sticky" id="intro-sticky">
+          <div class="intro-sticky__sky" aria-hidden="true"></div>
+
+          <div class="intro__content">
+            <div class="intro__editorial">
+              <!-- Target slot where the shrinking hero video/frame docks -->
+              <div class="intro__thumb-slot" id="intro-thumb-slot" aria-hidden="true"></div>
+              <h1 class="intro__headline" id="intro-headline">
+                <span class="intro__headline-lead">Проектируем дома, где</span>
+                инженерия скрыта, а пространство интуитивно. Никаких лишних деталей — только ваш привычный образ жизни
+              </h1>
+            </div>
+          </div>
+
+          <!-- Morphing Hero Video Frame (starts full-bleed 100%, docks into intro-thumb-slot on scroll) -->
+          <div class="hero-morph" id="hero-morph">
+            <video
+              class="hero-morph__image"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              poster="assets/hero-house.png"
+              aria-label="Видео-интро архитектурного бюро АХМА"
+            >
+              <source src="assets/hero-intro.mp4" type="video/mp4" />
+            </video>
+            <div class="hero-morph__vignette" id="hero-morph-vignette" aria-hidden="true"></div>
+          </div>
+
+          <div class="hero-scroll-hint" id="hero-scroll-hint" aria-hidden="true">
+            <span>Скролл</span>
+            <span class="hero-scroll-hint__line"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Twilight House -->
+      <div class="intro__house">
+        <img
+          src="assets/intro-house.png"
+          alt="Резиденция АХМА на закате с теплой архитектурной подсветкой"
+          class="intro__house-img"
+        />
+      </div>
+    </section>
+
+    <!-- Section 3: Projects Gallery -->
+    <section class="projects container" id="projects" aria-label="Избранные проекты">
+      <figure class="project-wide">
+        <button
+          type="button"
+          class="project-trigger"
+          data-lightbox-src="assets/project-karelian.png"
+          data-lightbox-caption="Резиденция у Большого Озера · Ленинградская область, 1753 м²"
+          aria-label="Открыть фото: Резиденция у Большого Озера"
+        >
+          <img
+            src="assets/project-karelian.png"
+            alt="Двухэтажный дом на скалистом берегу озера среди сосен"
+            loading="lazy"
+          />
+          <span class="project-plate">
+            <span class="project-plate__title">Резиденция у Большого Озера</span>
+            <span class="project-plate__meta">Ленинградская область · 1753 м²</span>
+          </span>
+        </button>
+      </figure>
+
+      <div class="project-asymmetric">
+        <div class="project-asymmetric__left">
+          <figure class="project-detail project-detail--sculpt">
+            <button
+              type="button"
+              class="project-trigger"
+              data-lightbox-src="assets/project-detail-top.png"
+              data-lightbox-caption="Дом-айсберг в Крыму · Скульптурный акцент входной группы"
+              aria-label="Открыть фото: Дом-айсберг в Крыму, деталь фасада"
+            >
+              <img
+                src="assets/project-detail-top.png"
+                alt="Скульптурный акцент из металла у каменного фасада"
+                class="project-detail__sculpt-img"
+                loading="lazy"
+              />
+              <span class="project-plate">
+                <span class="project-plate__title">Дом-айсберг в Крыму</span>
+                <span class="project-plate__meta">Деталь входной группы</span>
+              </span>
+            </button>
+          </figure>
+
+          <figure class="project-detail">
+            <button
+              type="button"
+              class="project-trigger"
+              data-lightbox-src="assets/drive-home-detail.jpg"
+              data-lightbox-caption="Клубный поселок на озере Нахимовское · Терраса и зона отдыха"
+              aria-label="Открыть фото: Клубный поселок на озере Нахимовское"
+            >
+              <img
+                src="assets/drive-home-detail.jpg"
+                alt="Фрагмент деревянной отделки фасада и террасы у бассейна"
+                loading="lazy"
+              />
+              <span class="project-plate">
+                <span class="project-plate__title">Озеро Нахимовское</span>
+                <span class="project-plate__meta">Терраса у воды</span>
+              </span>
+            </button>
+          </figure>
+        </div>
+
+        <figure class="project-asymmetric__right">
+          <button
+            type="button"
+            class="project-trigger"
+            data-lightbox-src="assets/drive-home-facade.jpg"
+            data-lightbox-caption="Дом-айсберг в Крыму · Центральный фасад с панорамным остеклением"
+            aria-label="Открыть фото: Дом-айсберг в Крыму"
+          >
+            <img
+              src="assets/drive-home-facade.jpg"
+              alt="Симметричный фасад современного дома с двухсветным витражом"
+              loading="lazy"
+            />
+            <span class="project-plate">
+              <span class="project-plate__title">Дом-айсберг в Крыму</span>
+              <span class="project-plate__meta">Россия, Крым</span>
+            </span>
+          </button>
+        </figure>
+      </div>
+
+      <figure class="project-wide">
+        <button
+          type="button"
+          class="project-trigger"
+          data-lightbox-src="assets/project-pool.png"
+          data-lightbox-caption="Курорт в Индонезии · Остров Лабуан, вилла с бассейном"
+          aria-label="Открыть фото: Курорт в Индонезии"
+        >
+          <img
+            src="assets/project-pool.png"
+            alt="Одноэтажный дом из светлого камня с бассейном и садом"
+            loading="lazy"
+          />
+          <span class="project-plate">
+            <span class="project-plate__title">Курорт в Индонезии</span>
+            <span class="project-plate__meta">Индонезия, остров Лабуан</span>
+          </span>
+        </button>
+      </figure>
+
+      <div class="projects__cta-wrap">
+        <a href="projects.html" class="action-link">
+          <span class="action-link__icon" aria-hidden="true">
+            <img src="assets/arrow-icon.svg" alt="" width="18" height="18" />
+          </span>
+          <span>Все проекты</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 3B: Interactive 6-Project Archive (real Figma covers -> full project pages) -->
+    <section class="archive container" id="projects-archive" aria-label="Архив проектов">
+      <div class="archive__header">
+        <div>
+          <p class="section-eyebrow">Проекты</p>
+          <h2 class="display-heading archive__title">Избранное портфолио</h2>
+        </div>
+        <div class="archive__filters" role="tablist" aria-label="Фильтр проектов">
+          <button type="button" class="archive__filter is-active" role="tab" aria-selected="true" data-filter="all">Все</button>
+          <button type="button" class="archive__filter" role="tab" aria-selected="false" data-filter="villas">Виллы и дома</button>
+          <button type="button" class="archive__filter" role="tab" aria-selected="false" data-filter="public">Общественная функция</button>
+          <a href="ahma-dom.html" class="archive__filter">АХМА ДОМ</a>
+        </div>
+      </div>
+
+      <div class="archive__grid" id="archive-grid">
+        <article class="archive-card" data-category="villas">
+          <a href="project.html?id=bolshoe-ozero" class="archive-card__btn">
+            <div class="archive-card__media">
+              <img src="assets/pages/cover-bolshoe-ozero.png" alt="Резиденция у Большого Озера" loading="lazy" />
+              <span class="project-plate">
+                <span class="project-plate__title">Резиденция у Большого Озера</span>
+                <span class="project-plate__meta">Россия, Ленинградская область · 1753 м²</span>
+              </span>
+            </div>
+            <div class="archive-card__info">
+              <h3 class="archive-card__name">Резиденция у Большого Озера</h3>
+              <p class="archive-card__sub">Ленинградская область · 1753 м²</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="archive-card" data-category="villas">
+          <a href="project.html?id=krasnogorsk" class="archive-card__btn">
+            <div class="archive-card__media">
+              <img src="assets/pages/cover-krasnogorsk.png" alt="Резиденция в Красногорске" loading="lazy" />
+              <span class="project-plate">
+                <span class="project-plate__title">Резиденция в Красногорске</span>
+                <span class="project-plate__meta">Россия, Красногорск · 1 159 м²</span>
+              </span>
+            </div>
+            <div class="archive-card__info">
+              <h3 class="archive-card__name">Резиденция в Красногорске</h3>
+              <p class="archive-card__sub">Россия, Красногорск · 1 159 м²</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="archive-card" data-category="villas">
+          <a href="project.html?id=crimea" class="archive-card__btn">
+            <div class="archive-card__media">
+              <img src="assets/pages/cover-crimea.png" alt="Дом-айсберг в Крыму" loading="lazy" />
+              <span class="project-plate">
+                <span class="project-plate__title">Дом-айсберг в Крыму</span>
+                <span class="project-plate__meta">Россия, Крым</span>
+              </span>
+            </div>
+            <div class="archive-card__info">
+              <h3 class="archive-card__name">Дом-айсберг в Крыму</h3>
+              <p class="archive-card__sub">Россия, Крым · эскизный проект, рабочая документация</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="archive-card" data-category="villas">
+          <a href="project.html?id=nahimovskoe" class="archive-card__btn">
+            <div class="archive-card__media">
+              <img src="assets/pages/cover-nahimovskoe.png" alt="Клубный поселок на озере Нахимовское" loading="lazy" />
+              <span class="project-plate">
+                <span class="project-plate__title">Клубный поселок на озере Нахимовское</span>
+                <span class="project-plate__meta">Карельский перешеек · 1.6 га</span>
+              </span>
+            </div>
+            <div class="archive-card__info">
+              <h3 class="archive-card__name">Клубный поселок на озере Нахимовское</h3>
+              <p class="archive-card__sub">Ленинградская область · 8 резиденций, 3300 м²</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="archive-card" data-category="public">
+          <a href="project.html?id=karelia" class="archive-card__btn">
+            <div class="archive-card__media">
+              <img src="assets/pages/cover-karelia.png" alt="Эко-отель 4 звезды в Карелии" loading="lazy" />
+              <span class="project-plate">
+                <span class="project-plate__title">Эко-отель 4 звезды в Карелии</span>
+                <span class="project-plate__meta">Россия, Карелия</span>
+              </span>
+            </div>
+            <div class="archive-card__info">
+              <h3 class="archive-card__name">Эко-отель 4 звезды в Карелии</h3>
+              <p class="archive-card__sub">Россия, Карелия · эскизное проектирование, концепт</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="archive-card" data-category="public">
+          <a href="project.html?id=indonesia" class="archive-card__btn">
+            <div class="archive-card__media">
+              <img src="assets/pages/cover-indonesia.png" alt="Курорт в Индонезии" loading="lazy" />
+              <span class="project-plate">
+                <span class="project-plate__title">Курорт в Индонезии</span>
+                <span class="project-plate__meta">Индонезия, остров Лабуан</span>
+              </span>
+            </div>
+            <div class="archive-card__info">
+              <h3 class="archive-card__name">Курорт в Индонезии</h3>
+              <p class="archive-card__sub">Индонезия, остров Лабуан · отель и каскад вилл</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 4: Founders Quote & Portrait -->
+    <section class="founders container" id="bureau" aria-label="О бюро">
+      <div class="founders__inner">
+        <div class="founders__text">
+          <blockquote class="founders__quote">
+            Два взгляда. Одна любовь к общему делу. Создаем дома, которые со временем становятся только ценнее. За безупречной формой и функцией всегда скрывается главное: утреннее солнце, абсолютная тишина и глубокое чувство своего места.
+          </blockquote>
+          <p class="founders__author">
+            Алексей Солодилов и Ксения Тихоновскова,<br />
+            основатели бюро
+          </p>
+        </div>
+        <div class="founders__portrait">
+          <img
+            src="assets/founders-portrait.png"
+            alt="Алексей Солодилов и Ксения Тихоновскова, основатели бюро АХМА"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Recognition & Geography -->
+    <section class="credentials container" id="recognition" aria-label="Признание и география">
+      <div class="credentials__column">
+        <h2 class="section-eyebrow">Признание</h2>
+        <ul class="lined-list">
+          <li class="lined-list__item">
+            <p class="lined-list__title">Финалисты конкурса NEXT</p>
+            <p class="lined-list__meta">«Арх Москва 2025», Гостиный двор, Москва</p>
+          </li>
+          <li class="lined-list__item">
+            <p class="lined-list__title">Награда Ростовского архитектурного форума</p>
+            <p class="lined-list__meta">Ростов-на-Дону, 2026</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="credentials__column">
+        <h2 class="section-eyebrow">География</h2>
+        <ul class="lined-list">
+          <li class="lined-list__item">
+            <p class="lined-list__title">Санкт-Петербург</p>
+            <p class="lined-list__meta">Истрица · Никольский</p>
+          </li>
+          <li class="lined-list__item">
+            <p class="lined-list__title">Москва</p>
+            <p class="lined-list__meta">Вилла 17 · Офис на Малой Бронной</p>
+          </li>
+          <li class="lined-list__item">
+            <p class="lined-list__title">Ростов-на-Дону</p>
+            <p class="lined-list__meta">Резиденция №12 · Коттеджный поселок Внуково · Дом в лесу</p>
+          </li>
+          <li class="lined-list__item">
+            <p class="lined-list__title">Бали</p>
+            <p class="lined-list__meta">Комплекс вилл A-Residence</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 6: Method -->
+    <section class="method container" id="method" aria-label="Метод работы">
+      <div class="method__header">
+        <div class="method__heading-col">
+          <p class="section-eyebrow">Метод</p>
+          <h2 class="display-heading">Архитектурное мышление. Инженерная точность</h2>
+        </div>
+        <div class="method__desc-col">
+          <p class="body-copy">
+            Концепция для нас не существует отдельно от реализации. Уже на ранних этапах проектируем в BIM, проверяем размеры и взаимосвязи элементов, подключаем конструктив и инженерные решения. Поэтому архитектурная идея сразу получает реальные параметры.
+          </p>
+        </div>
+      </div>
+
+      <ol class="method__cards">
+        <li class="method__card">
+          <span class="method__num">01</span>
+          <p class="method__card-text">База, на которую опираются все строительные подрядчики</p>
+        </li>
+        <li class="method__card">
+          <span class="method__num">02</span>
+          <p class="method__card-text">Точная ведомость строительных материалов</p>
+        </li>
+        <li class="method__card">
+          <span class="method__num">03</span>
+          <p class="method__card-text">Защита от просчетов в конструктиве и инженерных решениях</p>
+        </li>
+        <li class="method__card">
+          <span class="method__num">04</span>
+          <p class="method__card-text">Вы можете буквально «погулять» по будущему дому</p>
+        </li>
+      </ol>
+
+      <figure class="method__visual">
+        <button
+          type="button"
+          class="project-trigger"
+          data-lightbox-src="assets/method-house.png"
+          data-lightbox-caption="Архитектурная реализация с проработкой всех инженерных узлов"
+          aria-label="Увеличить изображение проекта"
+        >
+          <img
+            src="assets/method-house.png"
+            alt="Современная резиденция с террасой, очагом и ландшафтным освещением"
+            loading="lazy"
+          />
+          <span class="project-plate">
+            <span class="project-plate__title">BIM-проектирование и реализация</span>
+            <span class="project-plate__meta">Открыть в галерее</span>
+          </span>
+        </button>
+      </figure>
+    </section>
+
+    <!-- Section 7: Contact / Form -->
+    <section class="contact container" id="contact" aria-label="Контакты и обратная связь">
+      <div class="contact__eyebrow-col">
+        <p class="section-eyebrow">С чего начать</p>
+      </div>
+
+      <div class="contact__form-col">
+        <h2 class="display-heading contact__title">
+          Расскажите<br />о проекте
+        </h2>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="contact-form__fields">
+            <label class="contact-form__field">
+              <span class="sr-only">Имя</span>
+              <input type="text" name="name" placeholder="имя*" required autocomplete="name" />
+            </label>
+            <label class="contact-form__field">
+              <span class="sr-only">Номер телефона</span>
+              <input type="tel" name="phone" placeholder="номер телефона*" required autocomplete="tel" />
+            </label>
+            <label class="contact-form__field">
+              <span class="sr-only">Электронная почта</span>
+              <input type="email" name="email" placeholder="электронная почта" autocomplete="email" />
+            </label>
+            <label class="contact-form__field">
+              <span class="sr-only">Комментарий</span>
+              <input type="text" name="comment" placeholder="комментарий" />
+            </label>
+          </div>
+
+          <label class="contact-form__consent">
+            <input type="checkbox" name="consent" required />
+            <span class="contact-form__checkbox" aria-hidden="true"></span>
+            <span class="contact-form__consent-text">
+              Я даю согласие на обработку моих персональных данных в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных.
+            </span>
+          </label>
+
+          <div class="contact-form__actions">
+            <button type="submit" class="action-link contact-form__submit">
+              <span class="action-link__icon" aria-hidden="true">
+                <img src="assets/arrow-icon.svg" alt="" width="18" height="18" />
+              </span>
+              <span>Отправить</span>
+            </button>
+            <p class="contact-form__status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact__info-col">
+        <div class="contact-links">
+          <div class="contact-links__row">
+            <a href="mailto:ahma@bureau.ru">ahma@bureau.ru</a>
+          </div>
+          <div class="contact-links__row">
+            <a href="tel:+79381221138">+7 938 122 11 38</a>
+          </div>
+          <div class="contact-links__row contact-links__row--socials">
+            <a href="https://wa.me/79381221138" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a href="#top" class="site-footer__logo" aria-label="АХМА — наверх">
+        <img src="assets/logo-footer.svg" alt="АХМА" width="315" height="70" />
+      </a>
+
+      <nav class="site-footer__nav" aria-label="Навигация в подвале">
+        <a href="bureau.html">Бюро</a>
+        <a href="method.html">Метод</a>
+        <a href="projects.html">Проекты</a>
+        <a href="media.html">Медиа</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+
+      <a href="#contact" class="action-link site-footer__cta">
+        <span class="action-link__icon" aria-hidden="true">
+          <img src="assets/arrow-icon.svg" alt="" width="18" height="18" />
+        </span>
+        <span>Обсудить ваш проект</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Project Case Study Modal (5 projects from Google Doc) -->
+  <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <div class="project-modal__backdrop" data-close-project></div>
+    <article class="project-modal__sheet">
+      <header class="project-modal__header">
+        <span class="section-eyebrow" id="project-modal-category">Проект</span>
+        <button type="button" class="project-modal__close" data-close-project aria-label="Закрыть проект">
+          <img src="assets/arrow-icon.svg" alt="" width="18" height="18" />
+        </button>
+      </header>
+      <div class="project-modal__body" id="project-modal-body"></div>
+    </article>
+  </div>
+
+  <!-- Lightbox Modal (with "Без затемнения" mode per handoff spec 712:190) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Просмотр фотографии проекта">
+    <div class="lightbox__top">
+      <span class="lightbox__counter" id="lightbox-counter">01 / 06</span>
+      <div class="lightbox__controls">
+        <label class="lightbox__mode-toggle">
+          <input type="checkbox" id="lightbox-no-dim-toggle" />
+          <span>Без затемнения</span>
+        </label>
+        <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Закрыть просмотр">×</button>
+      </div>
+    </div>
+
+    <div class="lightbox__stage" id="lightbox-stage">
+      <button type="button" class="lightbox__zone lightbox__zone--prev" id="lightbox-prev" aria-label="Предыдущее фото">
+        <span class="lightbox__arrow" aria-hidden="true">←</span>
+      </button>
+      <figure class="lightbox__figure">
+        <img src="" alt="" id="lightbox-img" />
+      </figure>
+      <button type="button" class="lightbox__zone lightbox__zone--next" id="lightbox-next" aria-label="Следующее фото">
+        <span class="lightbox__arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+
+    <div class="lightbox__bottom">
+      <p class="lightbox__caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

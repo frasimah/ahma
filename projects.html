@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Проекты — АХМА</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body id="top">
+  <header class="site-header site-header--solid" id="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__logo" aria-label="АХМА — на главную">
+        <img src="assets/logo-header.svg" alt="АХМА" width="90" height="20" />
+      </a>
+      <button type="button" class="site-header__menu-btn" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav-drawer">
+        <img src="assets/menu-icon.svg" alt="" width="24" height="24" />
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+    <div class="nav-drawer__backdrop" data-close-drawer></div>
+    <nav class="nav-drawer__panel" aria-label="Основная навигация">
+      <div class="nav-drawer__top">
+        <a href="index.html" class="nav-drawer__logo" aria-label="АХМА — на главную">
+          <img src="assets/logo-footer.svg" alt="АХМА" width="144" height="32" />
+        </a>
+        <button type="button" class="nav-drawer__close" data-close-drawer aria-label="Закрыть меню">
+          <img src="assets/arrow-icon.svg" alt="" width="18" height="18" />
+        </button>
+      </div>
+      <ul class="nav-drawer__links">
+        <li><a href="bureau.html">Бюро</a></li>
+        <li><a href="method.html">Метод</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="ahma-dom.html">АХМА ДОМ</a></li>
+        <li><a href="media.html">Медиа</a></li>
+        <li><a href="index.html#contact">Контакты</a></li>
+      </ul>
+      <div class="nav-drawer__footer">
+        <div class="nav-drawer__contacts">
+          <a href="mailto:ahma@bureau.ru">ahma@bureau.ru</a>
+          <a href="tel:+79381221138">+7 938 122 11 38</a>
+        </div>
+        <div class="nav-drawer__socials">
+          <a href="https://wa.me/79381221138" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <section class="page-title-block container">
+      <h1>Проекты</h1>
+    </section>
+
+    <section class="container" aria-label="Каталог проектов">
+      <div class="projects-page__filters" role="tablist" aria-label="Категории проектов">
+        <button type="button" class="projects-page__filter is-active" data-projects-filter="all">Все</button>
+        <button type="button" class="projects-page__filter" data-projects-filter="villas">Виллы и дома</button>
+        <button type="button" class="projects-page__filter" data-projects-filter="public">Общественная функция</button>
+        <a href="ahma-dom.html" class="projects-page__filter">АХМА ДОМ</a>
+      </div>
+
+      <div class="projects-feed">
+        <a href="project.html?id=bolshoe-ozero" class="projects-feed__card projects-feed__card--wide" data-project-cat="villas">
+          <img src="assets/pages/cover-bolshoe-ozero.png" alt="Резиденция у Большого Озера" />
+          <span class="project-plate">
+            <span class="project-plate__title">Резиденция у Большого Озера</span>
+            <span class="project-plate__meta">Россия, Ленинградская область · 1753 м²</span>
+          </span>
+        </a>
+
+        <div class="projects-feed__pair">
+          <a href="project.html?id=krasnogorsk" class="projects-feed__card projects-feed__card--half" data-project-cat="villas">
+            <img src="assets/pages/cover-krasnogorsk.png" alt="Резиденция в Красногорске" loading="lazy" />
+            <span class="project-plate">
+              <span class="project-plate__title">Резиденция в Красногорске</span>
+              <span class="project-plate__meta">Россия, Красногорск · 1 159 м²</span>
+            </span>
+          </a>
+
+          <a href="project.html?id=crimea" class="projects-feed__card projects-feed__card--half" data-project-cat="villas">
+            <img src="assets/pages/cover-crimea.png" alt="Дом-айсберг в Крыму" loading="lazy" />
+            <span class="project-plate">
+              <span class="project-plate__title">Дом-айсберг в Крыму</span>
+              <span class="project-plate__meta">Россия, Крым</span>
+            </span>
+          </a>
+        </div>
+
+        <a href="project.html?id=nahimovskoe" class="projects-feed__card projects-feed__card--wide" data-project-cat="villas">
+          <img src="assets/pages/cover-nahimovskoe.png" alt="Клубный поселок на озере Нахимовское" loading="lazy" />
+          <span class="project-plate">
+            <span class="project-plate__title">Клубный поселок на озере Нахимовское</span>
+            <span class="project-plate__meta">Ленинградская область, Карельский перешеек · 1.6 га</span>
+          </span>
+        </a>
+
+        <div class="projects-feed__pair">
+          <a href="project.html?id=karelia" class="projects-feed__card projects-feed__card--half" data-project-cat="public">
+            <img src="assets/pages/cover-karelia.png" alt="Эко-отель 4 звезды в Карелии" loading="lazy" />
+            <span class="project-plate">
+              <span class="project-plate__title">Эко-отель 4 звезды в Карелии</span>
+              <span class="project-plate__meta">Россия, Карелия</span>
+            </span>
+          </a>
+
+          <a href="project.html?id=indonesia" class="projects-feed__card projects-feed__card--half" data-project-cat="public">
+            <img src="assets/pages/cover-indonesia.png" alt="Курорт в Индонезии" loading="lazy" />
+            <span class="project-plate">
+              <span class="project-plate__title">Курорт в Индонезии</span>
+              <span class="project-plate__meta">Индонезия, остров Лабуан</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a href="index.html" class="site-footer__logo" aria-label="АХМА — на главную">
+        <img src="assets/logo-footer.svg" alt="АХМА" width="315" height="70" />
+      </a>
+      <nav class="site-footer__nav" aria-label="Навигация в подвале">
+        <a href="bureau.html">Бюро</a>
+        <a href="method.html">Метод</a>
+        <a href="projects.html">Проекты</a>
+        <a href="media.html">Медиа</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+      <a href="index.html#contact" class="action-link site-footer__cta">
+        <span class="action-link__icon" aria-hidden="true"><img src="assets/arrow-icon.svg" alt="" width="18" height="18" /></span>
+        <span>Обсудить ваш проект</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="site.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>
