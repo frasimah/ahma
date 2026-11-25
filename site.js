@@ -241,18 +241,219 @@
     `;
   }
 
-  // 5b. Bureau globe city pins sync
+  // 5b. Bureau globe city pins + interactive on-map project bubbles
+  const geoGlobe = document.getElementById('bureau-geo-globe');
+  const geoBubblesWrap = document.getElementById('geo-bubbles');
+  const geoLinesSvg = document.getElementById('geo-bubbles-lines');
+  const geoCloseBtn = document.getElementById('geo-bubbles-close');
   const geoCities = document.querySelectorAll('.bureau-geo__item[data-city], .bureau-geo__pin[data-city]');
-  if (geoCities.length) {
-    const setActiveCity = (city) => {
-      geoCities.forEach((el) => el.classList.toggle('is-active', Boolean(city) && el.dataset.city === city));
+
+  if (geoGlobe && geoBubblesWrap && geoCities.length) {
+    const GEO_PROJECTS = {
+      spb: [
+        {
+          title: 'Резиденция у Большого Озера',
+          meta: '1 753 м² · Лен. область',
+          thumb: 'assets/pages/cover-bolshoe-ozero.webp',
+          href: 'project.html?id=bolshoe-ozero',
+          x: 68, y: 17
+        },
+        {
+          title: 'Посёлок на оз. Нахимовское',
+          meta: '8 резиденций · 1,6 га',
+          thumb: 'assets/pages/cover-nahimovskoe.webp',
+          href: 'project.html?id=nahimovskoe',
+          x: 18, y: 21
+        },
+        {
+          title: 'Эко-отель 4★ в Карелии',
+          meta: 'Карелия · отель и виллы',
+          thumb: 'assets/pages/cover-karelia.webp',
+          href: 'project.html?id=karelia',
+          x: 16, y: 39
+        }
+      ],
+      msk: [
+        {
+          title: 'Резиденция в Красногорске',
+          meta: '1 159 м² · Подмосковье',
+          thumb: 'assets/pages/cover-krasnogorsk.webp',
+          href: 'project.html?id=krasnogorsk',
+          x: 72, y: 25
+        },
+        {
+          title: 'Все проекты портфолио',
+          meta: '6 проектов · смотреть архив',
+          thumb: 'assets/pages/cover-bolshoe-ozero.webp',
+          href: 'projects.html',
+          x: 18, y: 40
+        }
+      ],
+      rnd: [
+        {
+          title: 'Дом-айсберг в Крыму',
+          meta: 'Юг России · частная вилла',
+          thumb: 'assets/pages/cover-crimea.webp',
+          href: 'project.html?id=crimea',
+          x: 18, y: 52
+        },
+        {
+          title: 'Все проекты портфолио',
+          meta: 'Резиденции и посёлки',
+          thumb: 'assets/pages/cover-krasnogorsk.webp',
+          href: 'projects.html',
+          x: 72, y: 50
+        }
+      ],
+      bali: [
+        {
+          title: 'Курорт в Индонезии',
+          meta: 'о. Лабуан · отель и виллы',
+          thumb: 'assets/pages/cover-indonesia.webp',
+          href: 'project.html?id=indonesia',
+          x: 52, y: 61
+        },
+        {
+          title: 'Все проекты портфолио',
+          meta: 'Международные проекты',
+          thumb: 'assets/pages/cover-nahimovskoe.webp',
+          href: 'projects.html',
+          x: 49, y: 76
+        }
+      ]
     };
+
+    let selectedCity = null;
+    let hoveredCity = null;
+
+    const syncHighlight = () => {
+      const active = hoveredCity || selectedCity;
+      geoCities.forEach((el) => {
+        const isCurrent = Boolean(active) && el.dataset.city === active;
+        const isSelected = Boolean(selectedCity) && el.dataset.city === selectedCity;
+        el.classList.toggle('is-active', isCurrent || isSelected);
+        if (el.hasAttribute('aria-expanded')) {
+          el.setAttribute('aria-expanded', String(isSelected));
+        }
+      });
+    };
+
+    const drawLines = () => {
+      if (!geoLinesSvg) return;
+      geoLinesSvg.innerHTML = '';
+      if (!selectedCity || window.innerWidth <= 760) return;
+
+      const pin = geoGlobe.querySelector(`.bureau-geo__pin[data-city="${selectedCity}"] .bureau-geo__pin-dot`);
+      const bubbles = geoBubblesWrap.querySelectorAll('.bureau-geo__bubble');
+      if (!pin || !bubbles.length) return;
+
+      const gRect = geoGlobe.getBoundingClientRect();
+      const pRect = pin.getBoundingClientRect();
+      const x1 = pRect.left - gRect.left + pRect.width / 2;
+      const y1 = pRect.top - gRect.top + pRect.height / 2;
+
+      geoLinesSvg.setAttribute('viewBox', `0 0 ${gRect.width} ${gRect.height}`);
+
+      bubbles.forEach((bubble) => {
+        const bRect = bubble.getBoundingClientRect();
+        const bCenterX = bRect.left - gRect.left + bRect.width / 2;
+        const x2 = bCenterX < x1
+          ? bRect.right - gRect.left - 8
+          : bRect.left - gRect.left + 8;
+        const y2 = bRect.top - gRect.top + bRect.height / 2;
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', x1.toFixed(1));
+        line.setAttribute('y1', y1.toFixed(1));
+        line.setAttribute('x2', x2.toFixed(1));
+        line.setAttribute('y2', y2.toFixed(1));
+        geoLinesSvg.appendChild(line);
+      });
+    };
+
+    const closeBubbles = () => {
+      selectedCity = null;
+      geoBubblesWrap.innerHTML = '';
+      if (geoLinesSvg) geoLinesSvg.innerHTML = '';
+      if (geoCloseBtn) geoCloseBtn.hidden = true;
+      geoGlobe.classList.remove('has-bubbles');
+      syncHighlight();
+    };
+
+    const openBubbles = (city) => {
+      const items = GEO_PROJECTS[city];
+      if (!items) return;
+      if (selectedCity === city) {
+        closeBubbles();
+        return;
+      }
+      selectedCity = city;
+      geoGlobe.classList.add('has-bubbles');
+      if (geoCloseBtn) geoCloseBtn.hidden = false;
+
+      geoBubblesWrap.innerHTML = items.map((item) => `
+        <a class="bureau-geo__bubble" href="${item.href}" style="left: ${item.x}%; top: ${item.y}%;">
+          <img class="bureau-geo__bubble-thumb" src="${item.thumb}" alt="" width="40" height="40" decoding="async" />
+          <span class="bureau-geo__bubble-body">
+            <span class="bureau-geo__bubble-title">${item.title}</span>
+            <span class="bureau-geo__bubble-meta">${item.meta}</span>
+          </span>
+          <span class="bureau-geo__bubble-arrow" aria-hidden="true">↗</span>
+        </a>
+      `).join('');
+
+      const rendered = geoBubblesWrap.querySelectorAll('.bureau-geo__bubble');
+      rendered.forEach((el, idx) => {
+        el.style.transitionDelay = `${idx * 45}ms`;
+      });
+
+      requestAnimationFrame(() => {
+        rendered.forEach((el) => el.classList.add('is-visible'));
+        drawLines();
+      });
+
+      syncHighlight();
+    };
+
     geoCities.forEach((el) => {
-      el.addEventListener('mouseenter', () => setActiveCity(el.dataset.city));
-      el.addEventListener('mouseleave', () => setActiveCity(null));
-      el.addEventListener('focus', () => setActiveCity(el.dataset.city));
-      el.addEventListener('blur', () => setActiveCity(null));
+      el.addEventListener('mouseenter', () => {
+        hoveredCity = el.dataset.city;
+        syncHighlight();
+      });
+      el.addEventListener('mouseleave', () => {
+        hoveredCity = null;
+        syncHighlight();
+      });
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openBubbles(el.dataset.city);
+      });
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openBubbles(el.dataset.city);
+        }
+      });
     });
+
+    if (geoCloseBtn) {
+      geoCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeBubbles();
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!selectedCity) return;
+      if (e.target.closest('#bureau-geo-globe') || e.target.closest('.bureau-geo__list')) return;
+      closeBubbles();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && selectedCity) closeBubbles();
+    });
+
+    window.addEventListener('resize', drawLines);
   }
 
   bindLightboxTriggers();

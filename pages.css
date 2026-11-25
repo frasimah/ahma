@@ -258,25 +258,153 @@
   position: relative;
   width: min(760px, 100%);
   aspect-ratio: 1;
+  justify-self: end;
+  overflow: visible;
+}
+
+.bureau-geo__sphere {
+  position: absolute;
+  inset: 0;
   border-radius: 50%;
   overflow: hidden;
-  justify-self: end;
   background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e8e4df 70%, #c8c2bb 100%);
 }
 
-.bureau-geo__globe img {
+.bureau-geo__sphere img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.bureau-geo__globe::after {
+.bureau-geo__sphere::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: 50%;
   background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.18) 100%);
   pointer-events: none;
+}
+
+.bureau-geo__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  overflow: visible;
+}
+
+.bureau-geo__lines line {
+  stroke: rgba(53, 49, 49, 0.34);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.bureau-geo__bubbles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.bureau-geo__bubble {
+  position: absolute;
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px 7px 7px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(53, 49, 49, 0.14);
+  box-shadow: 0 8px 24px rgba(53, 49, 49, 0.14);
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -50%) translateY(6px) scale(0.94);
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.bureau-geo__bubble.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0) scale(1);
+}
+
+.bureau-geo__bubble:hover {
+  transform: translate(-50%, -50%) translateY(-2px) scale(1.015);
+  box-shadow: 0 12px 28px rgba(53, 49, 49, 0.2);
+  border-color: rgba(53, 49, 49, 0.32);
+}
+
+.bureau-geo__bubble-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: var(--bg);
+}
+
+.bureau-geo__bubble-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bureau-geo__bubble-title {
+  font-size: 12px;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.bureau-geo__bubble-meta {
+  font-size: 10px;
+  line-height: 1.25;
+  color: rgba(53, 49, 49, 0.58);
+}
+
+.bureau-geo__bubble-arrow {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--bg);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+  transition: background-color 0.22s var(--ease), color 0.22s var(--ease);
+}
+
+.bureau-geo__bubble:hover .bureau-geo__bubble-arrow {
+  background-color: var(--ink);
+  color: var(--bg);
+}
+
+.bureau-geo__close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 7;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(53, 49, 49, 0.16);
+  color: var(--ink);
+  font-size: 11px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.bureau-geo__close:hover {
+  background-color: var(--ink);
+  color: var(--bg);
 }
 
 .bureau-geo__item {
@@ -852,5 +980,58 @@
   .projects-feed__card--wide,
   .case-gallery__wide {
     aspect-ratio: 4 / 3;
+  }
+
+  .bureau-geo__globe {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: auto;
+  }
+
+  .bureau-geo__sphere {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  .bureau-geo__lines {
+    display: none;
+  }
+
+  .bureau-geo__bubbles {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .bureau-geo__bubbles:empty {
+    margin-top: 0;
+  }
+
+  .bureau-geo__bubble {
+    position: static;
+    left: auto !important;
+    top: auto !important;
+    width: 100%;
+    justify-content: flex-start;
+    white-space: normal;
+    transform: translateY(6px) scale(0.98);
+  }
+
+  .bureau-geo__bubble.is-visible,
+  .bureau-geo__bubble:hover {
+    transform: translateY(0) scale(1);
+  }
+
+  .bureau-geo__bubble-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .bureau-geo__close {
+    top: 8px;
+    right: 8px;
   }
 }

@@ -133,43 +133,48 @@
         </div>
         <p class="bureau-geo__sub">100+ проектов в разных локациях России и за рубежом</p>
         <ul class="bureau-geo__list">
-          <li class="bureau-geo__item" data-city="spb">
+          <li class="bureau-geo__item" data-city="spb" role="button" tabindex="0" aria-expanded="false">
             <span class="bureau-geo__city"><span class="bureau-geo__dot"></span>Санкт-Петербург</span>
             <span class="bureau-geo__country">Россия</span>
           </li>
-          <li class="bureau-geo__item" data-city="msk">
+          <li class="bureau-geo__item" data-city="msk" role="button" tabindex="0" aria-expanded="false">
             <span class="bureau-geo__city"><span class="bureau-geo__dot"></span>Москва</span>
             <span class="bureau-geo__country">Россия</span>
           </li>
-          <li class="bureau-geo__item" data-city="rnd">
+          <li class="bureau-geo__item" data-city="rnd" role="button" tabindex="0" aria-expanded="false">
             <span class="bureau-geo__city"><span class="bureau-geo__dot"></span>Ростов-на-Дону</span>
             <span class="bureau-geo__country">Россия</span>
           </li>
-          <li class="bureau-geo__item" data-city="bali">
+          <li class="bureau-geo__item" data-city="bali" role="button" tabindex="0" aria-expanded="false">
             <span class="bureau-geo__city"><span class="bureau-geo__dot"></span>Бали</span>
             <span class="bureau-geo__country">Индонезия</span>
           </li>
         </ul>
       </div>
 
-      <div class="bureau-geo__globe">
-        <img decoding="async" src="assets/pages/bureau-globe.webp" alt="География проектов АХМА на карте мира" loading="lazy" />
-        <button type="button" class="bureau-geo__pin" data-city="spb" style="left: 41.5%; top: 30.5%;" aria-label="Санкт-Петербург">
+      <div class="bureau-geo__globe" id="bureau-geo-globe">
+        <div class="bureau-geo__sphere">
+          <img decoding="async" src="assets/pages/bureau-globe.webp" alt="География проектов АХМА на карте мира" loading="lazy" />
+        </div>
+        <svg class="bureau-geo__lines" id="geo-bubbles-lines" aria-hidden="true"></svg>
+        <button type="button" class="bureau-geo__pin" data-city="spb" style="left: 41.5%; top: 30.5%;" aria-label="Санкт-Петербург" aria-expanded="false">
           <span class="bureau-geo__pin-dot"></span>
           <span class="bureau-geo__pin-label">Санкт-Петербург</span>
         </button>
-        <button type="button" class="bureau-geo__pin" data-city="msk" style="left: 44.5%; top: 35.5%;" aria-label="Москва">
+        <button type="button" class="bureau-geo__pin" data-city="msk" style="left: 44.5%; top: 35.5%;" aria-label="Москва" aria-expanded="false">
           <span class="bureau-geo__pin-dot"></span>
           <span class="bureau-geo__pin-label">Москва</span>
         </button>
-        <button type="button" class="bureau-geo__pin" data-city="rnd" style="left: 43.5%; top: 42.5%;" aria-label="Ростов-на-Дону">
+        <button type="button" class="bureau-geo__pin" data-city="rnd" style="left: 43.5%; top: 42.5%;" aria-label="Ростов-на-Дону" aria-expanded="false">
           <span class="bureau-geo__pin-dot"></span>
           <span class="bureau-geo__pin-label">Ростов-на-Дону</span>
         </button>
-        <button type="button" class="bureau-geo__pin" data-city="bali" style="left: 82.5%; top: 71.5%;" aria-label="Бали">
+        <button type="button" class="bureau-geo__pin" data-city="bali" style="left: 82.5%; top: 71.5%;" aria-label="Бали" aria-expanded="false">
           <span class="bureau-geo__pin-dot"></span>
           <span class="bureau-geo__pin-label">Бали</span>
         </button>
+        <div class="bureau-geo__bubbles" id="geo-bubbles" aria-live="polite"></div>
+        <button type="button" class="bureau-geo__close" id="geo-bubbles-close" aria-label="Свернуть проекты" hidden>× Свернуть</button>
       </div>
     </section>
   </main>
