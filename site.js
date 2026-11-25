@@ -280,13 +280,6 @@
           thumb: 'assets/pages/cover-krasnogorsk.webp',
           href: 'project.html?id=krasnogorsk',
           x: 72, y: 25
-        },
-        {
-          title: 'Все проекты портфолио',
-          meta: '6 проектов · смотреть архив',
-          thumb: 'assets/pages/cover-bolshoe-ozero.webp',
-          href: 'projects.html',
-          x: 18, y: 40
         }
       ],
       rnd: [
@@ -295,14 +288,7 @@
           meta: 'Юг России · частная вилла',
           thumb: 'assets/pages/cover-crimea.webp',
           href: 'project.html?id=crimea',
-          x: 18, y: 52
-        },
-        {
-          title: 'Все проекты портфолио',
-          meta: 'Резиденции и посёлки',
-          thumb: 'assets/pages/cover-krasnogorsk.webp',
-          href: 'projects.html',
-          x: 72, y: 50
+          x: 24, y: 52
         }
       ],
       bali: [
@@ -311,14 +297,7 @@
           meta: 'о. Лабуан · отель и виллы',
           thumb: 'assets/pages/cover-indonesia.webp',
           href: 'project.html?id=indonesia',
-          x: 52, y: 61
-        },
-        {
-          title: 'Все проекты портфолио',
-          meta: 'Международные проекты',
-          thumb: 'assets/pages/cover-nahimovskoe.webp',
-          href: 'projects.html',
-          x: 49, y: 76
+          x: 54, y: 61
         }
       ]
     };
