@@ -103,16 +103,100 @@
   // 4. Media page interactive news preview
   const newsItems = document.querySelectorAll('.media-news-item');
   const newsPreviewImg = document.getElementById('media-preview-img');
+  const newsPreviewLink = document.getElementById('media-preview-link');
   if (newsItems.length && newsPreviewImg) {
     newsItems.forEach((item) => {
       const activate = () => {
         newsItems.forEach((el) => el.classList.toggle('is-active', el === item));
         const src = item.dataset.previewSrc;
         if (src) newsPreviewImg.src = src;
+        if (newsPreviewLink && item.dataset.articleHref) {
+          newsPreviewLink.href = item.dataset.articleHref;
+        }
       };
       item.addEventListener('mouseenter', activate);
-      item.addEventListener('click', activate);
+      item.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        activate();
+      });
     });
+  }
+
+  // 4b. Dynamic Media Article Renderer (article.html?id=...)
+  const articleRoot = document.getElementById('article-page-root');
+  if (articleRoot && Array.isArray(window.AHMA_MEDIA)) {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id') || 'pool-villa';
+    const list = window.AHMA_MEDIA;
+    const idx = Math.max(list.findIndex((a) => a.id === id), 0);
+    const article = list[idx];
+    const nextArticle = list[(idx + 1) % list.length];
+
+    document.title = `${article.title} — Медиа — АХМА`;
+
+    const sectionsHtml = article.sections
+      .map(
+        (sec) => `
+        <div class="article-section">
+          <h2>${sec.heading}</h2>
+          ${sec.paragraphs.map((p) => `<p>${p}</p>`).join('')}
+        </div>`
+      )
+      .join('');
+
+    const extraHtml = article.extraImage
+      ? `
+        <figure class="article-figure">
+          <div class="article-figure__frame">
+            <button
+              type="button"
+              class="project-trigger"
+              data-lightbox-src="${article.extraImage}"
+              data-lightbox-caption="${article.extraCaption || article.title}"
+              aria-label="Увеличить изображение"
+            >
+              <img decoding="async" src="${article.extraImage}" alt="${article.extraCaption || article.title}" loading="lazy" />
+            </button>
+          </div>
+          ${article.extraCaption ? `<figcaption>${article.extraCaption}</figcaption>` : ''}
+        </figure>`
+      : '';
+
+    articleRoot.innerHTML = `
+      <article class="container">
+        <header class="article-hero">
+          <div class="article-meta">
+            <a href="media.html" class="article-back">←&nbsp;&nbsp;Все материалы</a>
+            <span>${article.tag} · ${article.date}</span>
+          </div>
+          <h1 class="display-heading article-title">${article.title}</h1>
+          <p class="lead-copy article-lead">${article.lead}</p>
+        </header>
+
+        <figure class="article-cover">
+          <button
+            type="button"
+            class="project-trigger"
+            data-lightbox-src="${article.cover}"
+            data-lightbox-caption="${article.coverCaption || article.title}"
+            ${article.coverNoDim ? 'data-lightbox-no-dim="true"' : ''}
+            aria-label="Увеличить обложку"
+          >
+            <img decoding="async" src="${article.cover}" alt="${article.title}" />
+          </button>
+        </figure>
+
+        <div class="article-body">
+          ${sectionsHtml}
+          ${extraHtml}
+        </div>
+
+        <nav class="case-nav" aria-label="Навигация по материалам">
+          <a href="media.html">←&nbsp;&nbsp;Все материалы</a>
+          <a href="article.html?id=${nextArticle.id}">${nextArticle.title}&nbsp;&nbsp;→</a>
+        </nav>
+      </article>
+    `;
   }
 
   // 5. Projects Archive category filter (projects.html)
